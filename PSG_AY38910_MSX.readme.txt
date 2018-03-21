@@ -1,0 +1,215 @@
+SDCC C PSG AY38910 Functions Library (object type)
+Version: v1.3 (11 March 2018)
+Author: mvac7/303bcn
+Architecture: MSX
+Format: C Object (SDCC .rel)
+Programming language: C
+WEB: 
+mail: mvac7303b@gmail.com
+
+Doc version: 1.0 (11 March 2018) 
+Sorry for the bad translation into English. 
+Pending correction.
+
+--------------------------------------------------------------------------------
+Index:
+
+1 Introduction
+2 Acknowledgments.
+3 Requirements
+4 Constants
+  4.1 Envelope shapes 
+
+5 Functions
+  5.1 Sound(register, value)
+  5.2 GetSound(register)
+  5.3 SetTonePeriod(channel, period)
+  5.4 SetNoisePeriod(period)
+  5.5 SetEnvelopePeriod(period)
+  5.6 SetVolume(channel, volume)
+  5.7 SetChannel(channel, isTone, isNoise)
+  5.8 PlayEnvelope(shape) 
+                       
+
+
+--------------------------------------------------------------------------------
+1. Introduction:
+
+  It's a opensource library (object type), with basic functions for work with 
+  PSG AY-3-8910 or compatible. 
+
+  Designed for develop MSX applications, using Small Device C 
+  Compiler (SDCC).
+  
+  It does not use the BIOS so it can be used to program ROMs or 
+  MSX-DOS executables.
+  
+  Reading or writing to the PSG is done through calls to the assigned ports. In 
+  most of the known MSX are used: 0xA0, 0xA1 and 0xA2. If you want to use this 
+  library for a different architecture, you will have to change these 
+  assignments found at the start of the AY38910.c sources
+
+  In header is defined boolean type, need for any functions. This type uses the 
+  values "true" or "false" in lowercase, which equals 1 and 0 respectively.  
+
+                           
+
+
+--------------------------------------------------------------------------------
+2. Acknowledgments
+  
+  Thanks for Info & help, to:
+
+  Avelino Herrera > http://msx.atlantes.org/index_es.html
+  Nerlaska > http://albertodehoyonebot.blogspot.com.es
+  Fubu > http://www.gamerachan.org/fubu/
+  Marq/Lieves!Tuore > http://www.kameli.net/lt/
+  Sapphire/Z80ST > http://z80st.auic.es/
+  Pentacour > http://pentacour.com/
+  JamQue/TPM > http://www.thepetsmode.com/
+  Andrear > http://andrear.altervista.org/home/msxsoftware.php
+  MSX Assembly Page > http://map.grauw.nl/resources/msxbios.php
+  Portar MSX Tech Doc > http://nocash.emubase.de/portar.htm
+  MSX Resource Center > http://www.msx.org/
+  Karoshi MSX Community > http://karoshi.auic.es/
+  BlueMSX >> http://www.bluemsx.com/
+  OpenMSX >> http://openmsx.sourceforge.net/
+  Meisei  >> ?
+
+
+
+--------------------------------------------------------------------------------
+3. Requirements:
+
+ * Small Device C Compiler (SDCC) v3.6 
+   http://sdcc.sourceforge.net/
+     
+
+
+--------------------------------------------------------------------------------
+4 Constants
+
+
+  4.1 Envelope shapes
+
+  In header defines a envelope shapes in case you prefer to use it instead of 
+  the numerical form:
+  
+  * ENV_LowerBeat      0 
+  * ENV_Upper          4 
+  * ENV_LeftSaw        8
+  * ENV_LowerTriangle 10 
+  * ENV_LowerHold     11 
+  * ENV_RightSaw      12
+  * ENV_UpperHold     13
+  * ENV_UpperTriangle 14
+
+
+  
+--------------------------------------------------------------------------------
+5 Functions
+
+
+================================================================================
+5.1 Sound(register, value)
+
+ Function : Write into a register of PSG
+ Input    : [char] register number (0 to 13)
+            [char] value
+ Output   : -
+ Examples : 
+
+            Sound(8,16); //channel A envelope on
+
+
+================================================================================
+5.2 GetSound(register) 
+
+ Function : Read PSG register value
+ Input    : [char] register number (0 to 13)
+ Output   : [char] value
+ Examples :              
+
+            char value;            
+            value = GetSound(7);  //read mixer register
+
+
+================================================================================
+5.3 SetTonePeriod(channel, period) 
+
+ Function : Set Tone Period for any channel
+ Input    : [char] channel (0, 1 or 2)
+            [unsigned int] period (0 - 4095)
+ Output   : -
+ Examples :              
+
+            SetTonePeriod(0, 1100);  //set tone period for channel A
+            
+
+================================================================================
+5.4 SetNoisePeriod(period) 
+
+ Function : Set Noise Period
+ Input    : [char] Noise period (0 - 31) 
+ Output   : -
+ Examples :
+ 
+            SetNoisePeriod(10);
+            
+
+================================================================================
+5.5 SetEnvelopePeriod(period) 
+
+ Function : Set Envelope Period
+ Input    : [unsigned int] Envelope period (0 - 65535) 
+ Output   : -
+ Examples :
+ 
+            SetEnvelopePeriod(1000);
+ 
+
+================================================================================
+5.6 SetVolume(channel, volume) 
+
+ Function : Set volume channel
+ Input    : [char] channel (0, 1 or 2)
+            [char] volume, 0 to 15 or 16 for activate envelope
+ Output   : -
+ Examples :
+ 
+            SetVolume(0,14);  // set 14 volume level for channel A
+            SetVolume(1,16);  // activate envelope for channel B
+
+
+================================================================================
+5.7 SetChannel(channel, isTone, isNoise)
+
+ Function : Mixer. Enable/disable Tone and Noise channels.
+ Input    : [char] channel (0, 1 or 2)
+            [boolean] tone state
+            [boolean] noise state
+ Output   : -
+ Examples : 
+ 
+            SetChannel(0,true,false);
+            SetChannel(1,true,true);
+            SetChannel(2,false,false); 
+ 
+             
+================================================================================
+5.8 PlayEnvelope(shape) 
+
+ Function : Set envelope type.
+            Plays the sound on channels that have a volume of 16.
+ Input    : [char] Envelope shape (0-15) (see envelope shapes definitions)
+ Output   : -
+ Examples :              
+
+            PlayEnvelope(0); //Play LowerBeat envelope shape
+            
+            PlayEnvelope(ENV_LowerTriangle); //Play LowerTriangle envelope shape
+
+            
+================================================================================
+
+  
