@@ -8,7 +8,7 @@ WEB:
 mail: mvac7303b@gmail.com
 
 Doc version: 1.0 (11 March 2018) 
-Sorry for the bad translation into English. 
+Warning: Sorry for the bad translation into English. 
 Pending correction.
 
 --------------------------------------------------------------------------------
@@ -68,6 +68,7 @@ Index:
   Pentacour > http://pentacour.com/
   JamQue/TPM > http://www.thepetsmode.com/
   Andrear > http://andrear.altervista.org/home/msxsoftware.php
+  Konamiman > https://www.konamiman.com
   MSX Assembly Page > http://map.grauw.nl/resources/msxbios.php
   Portar MSX Tech Doc > http://nocash.emubase.de/portar.htm
   MSX Resource Center > http://www.msx.org/

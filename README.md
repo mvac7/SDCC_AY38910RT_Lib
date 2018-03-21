@@ -1,4 +1,4 @@
-#SDCC C PSG AY38910 Functions Library (object type)
+# SDCC C PSG AY38910 Functions Library (object type)
 
 Version: v1.3 (11 March 2018)
 
@@ -18,9 +18,9 @@ mail: mvac7303b@gmail.com
 
 Doc version: 1.0 (11 March 2018) 
 
-Sorry for the bad translation into English. 
+**Warning:** Sorry for the bad translation into English. 
 
-Pending correction.
+**Pending correction.**
 
 
 ## 1. Introduction:
