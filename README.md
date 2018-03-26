@@ -16,13 +16,13 @@ mail: mvac7303b@gmail.com
 
 
 
-Doc version: 1.0.1 (11 March 2018) 
+Doc version: 1.0.1
 
 ## Document changes
 
-- 1.0.1:
+- 1.0.1 (25 March 2018):
     + Reviewed text.
-- 1.0: 
+- 1.0 (11 March 2018): 
     + Initial version.
 
 
