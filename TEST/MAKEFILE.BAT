@@ -1,13 +1,12 @@
 @echo off
-REM MAKEFILE for 16K ROMs using SDCC compiler
+REM MAKEFILE for 8/16K ROMs using SDCC compiler
 REM CFILENAME = Source name without extension
 REM ROMFILENAME = ROM file name without extension
 REM ROMSIZE = 2000 for 8KBytes ROM or 4000 for 16KBytes ROM
-echo Make a 16K ROM ------------------------------------------------------------
 SET CFILENAME=Test
 SET ROMFILENAME=TEST
 SET CODELOC=0x4020
-SET ROMSIZE=4000
+SET ROMSIZE=2000
 SET CRT=libs\crt0msx.16k.4000.rel
 SET LIB0=libs\textmode.rel
 SET LIB1=libs\memory.rel
