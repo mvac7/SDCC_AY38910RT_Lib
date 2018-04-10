@@ -73,10 +73,8 @@ Thanks for Info & help, to:
 
 ## 3. Requirements:
 
-Small Device C Compiler (SDCC) v3.6  
-
-http://sdcc.sourceforge.net/
-     
+* Small Device C Compiler (SDCC) v3.6 http://sdcc.sourceforge.net/
+* Hex2bin v2.2 http://hex2bin.sourceforge.net/     
 
 
 ## 4 Constants

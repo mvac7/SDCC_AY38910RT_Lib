@@ -90,6 +90,9 @@ respectively.
  * Small Device C Compiler (SDCC) v3.6 
    http://sdcc.sourceforge.net/
      
+ * Hex2bin v2.2 
+   http://hex2bin.sourceforge.net/
+
 
 
 --------------------------------------------------------------------------------
