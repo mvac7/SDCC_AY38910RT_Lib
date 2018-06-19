@@ -40,8 +40,8 @@ boolean NOT(boolean value);
 
 
 // constants  ------------------------------------------------------------------
-const char text01[] = "Test SDCC AY38910 library";
-const char text02[] = "v1.1 (12Mar2018)";
+const char text01[] = "Test SDCC AY38910 Lib";
+const char text02[] = "v1.2 (18/06/2018)";
 
 
 // global variable definition --------------------------------------------------
@@ -117,19 +117,19 @@ void test1()
   LOCATE(0,6);
   PRINT(" Press a key to stop sound");
 
-  Sound(0,100);//tone period channel A (2B)
-  Sound(1,10); 
-  Sound(6,100); //noise
-  Sound(7,0B00110110); //Mixer
-  Sound(8,16); //channel A envelope on
-  Sound(11,100);//envelope period (2B)
-  Sound(12,10); // 
-  Sound(13,14); //envelope wave type
+  SOUND(0,100);//tone period channel A (2B)
+  SOUND(1,10); 
+  SOUND(6,100); //noise
+  SOUND(7,0B00110110); //Mixer
+  SOUND(8,16); //channel A envelope on
+  SOUND(11,100);//envelope period (2B)
+  SOUND(12,10); // 
+  SOUND(13,14); //envelope wave type
   
   INKEY();
   
-  Sound(8,0); //silencia
-  Sound(13,0);
+  SOUND(8,0); //silencia
+  SOUND(13,0);
   
   WAIT(PAUSE_TIME);
 }
@@ -156,8 +156,8 @@ void test2()
   LOCATE(0,8);
   PRINT(" Tone Period A:");
   
-  Sound(7,0B00111110); //Mixer
-  Sound(8,12);
+  SOUND(7,0B00111110); //Mixer
+  SOUND(8,12);
   while(1)
   {
     HALT;
@@ -171,14 +171,14 @@ void test2()
     if (period>4094) period=0;
   
   }  
-  Sound(8,10);
+  SOUND(8,10);
   WAIT(PAUSE_TIME);
   
   LOCATE(0,9);
   PRINT(" Tone Period B:");
   period = 0;
-  Sound(7,0B00111100); //Mixer
-  Sound(9,12);
+  SOUND(7,0B00111100); //Mixer
+  SOUND(9,12);
   while(1)
   {
     HALT;
@@ -192,14 +192,14 @@ void test2()
     if (period>4094) period=0;
   
   }  
-  Sound(9,10);
+  SOUND(9,10);
   WAIT(PAUSE_TIME);
   
   LOCATE(0,10);
   PRINT(" Tone Period C:");
   period = 0;
-  Sound(7,0B00111000); //Mixer
-  Sound(10,12);
+  SOUND(7,0B00111000); //Mixer
+  SOUND(10,12);
   while(1)
   {
     HALT;
@@ -216,9 +216,9 @@ void test2()
   
   WAIT(PAUSE_TIME);
     
-  Sound(8,0);
-  Sound(9,0);
-  Sound(10,0);    
+  SOUND(8,0);
+  SOUND(9,0);
+  SOUND(10,0);    
 
 }
 
@@ -242,8 +242,8 @@ void test3()
   PRINT(" Press space to end");
   LOCATE(0,8);
   PRINT(" Noise Period:");
-  Sound(7,0B00110111); //Mixer
-  Sound(8,11);
+  SOUND(7,0B00110111); //Mixer
+  SOUND(8,11);
   while(1)
   {
     if (GetKeyMatrix(8)!=255) break;
@@ -259,9 +259,9 @@ void test3()
   
   WAIT(PAUSE_TIME);
   
-  Sound(8,0);
-  Sound(9,0);
-  Sound(10,0);  
+  SOUND(8,0);
+  SOUND(9,0);
+  SOUND(10,0);  
   
 }
 
@@ -286,9 +286,9 @@ void test4()
   
   LOCATE(0,8);
   PRINT(" Volume A:");
-  Sound(0,100);
-  Sound(1,10); //tone period
-  Sound(7,0B00111110); //Mixer
+  SOUND(0,100);
+  SOUND(1,10); //tone period
+  SOUND(7,0B11110110); //Mixer > Test write to 7 AY register
   while(1)
   {    
     if (GetKeyMatrix(8)!=255) break;
@@ -307,9 +307,9 @@ void test4()
   LOCATE(0,9);
   PRINT(" Volume B:");
   amp=0;
-  Sound(2,300);
-  Sound(3,10); //tone period
-  Sound(7,0B00111100); //Mixer
+  SOUND(2,300);
+  SOUND(3,10); //tone period
+  SOUND(7,0B00101101); //Mixer > Test write to 7 AY register
   while(1)
   {    
     if (GetKeyMatrix(8)!=255) break;
@@ -328,9 +328,9 @@ void test4()
   LOCATE(0,10);
   PRINT(" Volume C:");
   amp=0;
-  Sound(4,600);
-  Sound(5,10); //tone period
-  Sound(7,0B00111000); //Mixer
+  SOUND(4,600);
+  SOUND(5,10); //tone period
+  SOUND(7,0B00011011); //Mixer > Test write to 7 AY register
   while(1)
   {    
     if (GetKeyMatrix(8)!=255) break;
@@ -346,9 +346,9 @@ void test4()
   
   WAIT(PAUSE_TIME);
   
-  Sound(8,0);//enjoy the silence
-  Sound(9,0);
-  Sound(10,0);  
+  SOUND(8,0);//enjoy the silence
+  SOUND(9,0);
+  SOUND(10,0);  
   
 }
 
@@ -374,11 +374,11 @@ void test5()
   LOCATE(0,8);
   PRINT(" Env Period:");
   
-  Sound(0,100);
-  Sound(1,10); //tone period
-  Sound(7,0B00111110); //Mixer
-  Sound(8,16);
-  Sound(13,14);
+  SOUND(0,100);
+  SOUND(1,10); //tone period
+  SOUND(7,0B00111110); //Mixer
+  SOUND(8,16);
+  SOUND(13,14);
   
   while(!isEnd)
   {
@@ -396,7 +396,7 @@ void test5()
     //if (joytrig(0)) break;
   }
   
-  Sound(8,0);
+  SOUND(8,0);
   
   WAIT(PAUSE_TIME);
   

@@ -1,8 +1,14 @@
 /* =============================================================================
-   AY38910.h                                                             
-   v1.3 (11 March 2018)
-                                                                        
-   Description                                                              
+   AY38910.h
+   SDCC AY-3-8910 Functions Library (object type)                                                             
+   Author: mvac7/303bcn
+   Architecture: MSX
+   Format: C Object (SDCC .rel)
+   Programming language: C
+   WEB: 
+   mail: mvac7303b@gmail.com
+   
+   Description:                                                              
      Opensource library for acces to PSG AY-3-8910
      It does not use the BIOS so it can be used to program ROMs or 
      MSX-DOS executables. 
@@ -37,14 +43,14 @@
 
 
 /* =============================================================================
- Sound(register, value)
+ SOUND(register, value)
 
  Function : Write into a register of PSG
  Input    : [char] register number (0 to 13)
             [char] value
  Output   : -
 ============================================================================= */
-void Sound(char reg, char value);
+void SOUND(char reg, char value);
 
 
 

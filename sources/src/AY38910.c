@@ -1,11 +1,23 @@
 /* =============================================================================
-   AY38910.c                                                             
-   v1.3 (11 March 2018)
-                                                                       
-   Description                                                              
+   SDCC AY-3-8910 Functions Library (object type)
+   Version: 1.4
+   Date: 17/06/2018
+   Author: mvac7/303bcn
+   Architecture: MSX
+   Format: C Object (SDCC .rel)
+   Programming language: C
+   WEB: 
+   mail: mvac7303b@gmail.com
+
+   Description:                                                              
      Opensource library for acces to PSG AY-3-8910
      It does not use the BIOS so it can be used to program ROMs or 
      MSX-DOS executables.
+     
+  History of versions:
+   >v1.4 (17/06/2018)<
+    v1.3 (11/02/2018)
+    v1.1 (14/02/2014) 
 ============================================================================= */
 #include "../include/AY38910.h"
 
@@ -22,32 +34,36 @@
 
 
 /* =============================================================================
- Sound(register, value)
+ SOUND(register, value)
 
  Function : Write into a register of PSG
  Input    : [char] register number (0 to 13)
             [char] value
  Output   : -
 ============================================================================= */
-void Sound(char reg, char value){
+void SOUND(char reg, char value){
 reg;value;
 __asm
   push IX
   ld   IX,#0
   add  IX,SP
   
-  ld   C,4(ix)
-  ld   B,5(ix)
+  ld   C,4(IX) ;reg
+  ld   B,5(IX) ;value
   
   ;control del registro 7
-  ld   A,B
+  ld   A,C
   cp   #7   ;IF reg=7
-  jr   NZ,writeAY      ;NO  
+  jr   NZ,writeAY      ;NO
+  
+  ld   A,B
+  AND  #0b00111111
+  ld   B,A
+      
   ;YES
   ld   A,#7
   out  (#AY0index),A
-  in   A,(#AY0read)
-  
+  in   A,(#AY0read)  
   and	 #0b11000000	; Mascara para coger dos bits de joys 
 	or	 B		        ; Añado Byte de B
   ld   B,A
@@ -61,7 +77,6 @@ writeAY:
   pop  IX
 __endasm;  
 }
-
 
     
 
@@ -80,7 +95,7 @@ __asm
   ld   IX,#0
   add  IX,SP
   
-  ld   A,4(ix)
+  ld   A,4(IX)
   out  (#AY0index),A
   in   A,(#AY0read)
   
@@ -102,8 +117,8 @@ __endasm;
 ============================================================================= */
 void SetTonePeriod(char channel, unsigned int period){
   channel=channel*2;
-  Sound(channel++,period & 0xFF);
-  Sound(channel,(period & 0xFF00)/0xFF);
+  SOUND(channel++,period & 0xFF);
+  SOUND(channel,(period & 0xFF00)/0xFF);
   return;
 }
 
@@ -117,7 +132,7 @@ void SetTonePeriod(char channel, unsigned int period){
  Output   : - 
 ============================================================================= */
 void SetNoisePeriod(char period){
-  Sound(6,period);
+  SOUND(6,period);
   return;
 }
 
@@ -131,8 +146,8 @@ void SetNoisePeriod(char period){
  Output   : - 
 ============================================================================= */
 void SetEnvelopePeriod(unsigned int period){
-  Sound(11,period & 0xFF);
-  Sound(12,(period & 0xFF00)/0xFF);
+  SOUND(11,period & 0xFF);
+  SOUND(12,(period & 0xFF00)/0xFF);
   return;
 }
 
@@ -147,7 +162,7 @@ void SetEnvelopePeriod(unsigned int period){
  Output   : -
 ============================================================================= */
 void SetVolume(char channel, char volume){
-  Sound(8+channel,volume);
+  SOUND(8+channel,volume);
   return;
 }
 
@@ -183,7 +198,7 @@ void SetChannel(char channel, boolean isTone, boolean isNoise)
       if(isTone==true){newValue&=251;}else{newValue|=4;}
       if(isNoise==true){newValue&=223;}else{newValue|=32;}
   }
-  Sound(7,newValue);
+  SOUND(7,newValue);
   return;
 }
 
@@ -198,7 +213,7 @@ void SetChannel(char channel, boolean isTone, boolean isNoise)
  Output   : -
 ============================================================================= */
 void PlayEnvelope(char shape){
-  Sound(13,shape);
+  SOUND(13,shape);
   return;
 }
 
@@ -241,61 +256,5 @@ ILOOP:
 
 
 
-/*
-
-; recoge los datos del instrumento y lo copia al buffer de registros   
-SET_REGS:
-
-  call GET_DRUM ;A = drum number; output IX mem addr
-  
-  ld A,2(IX)
-  ld 4(IY),A
-  
-  ld A,3(IX)
-  ld 5(IY),A
-  
-  ld A,4(IX)
-  ld 6(IY),A
-  
-  ld 10(IY),#16 ;envelope on
-  
-  ld A,5(IX)
-  ld 11(IY),A
-  
-  ld A,6(IX)
-  ld 12(IY),A
-  
-  ld 13(IY),#1 ;envelope on wave 0
-
-  ;mixer reg7
-  ld B,#0b00111111 ;todos los canales desactivados
-      
-  ld A,(IX)   ;is tone
-  cp #0
-  call NZ,TONE_C_ON 
-  
-  ld A,1(IX)
-  cp #0
-  call NZ,NOISE_C_ON  
-                      
-  ;leer registro 7 y sumar valor de A, 
-  ; ultimos dos bits son de control de puertos del joystick 
-  ld	A,#7
-	call GET_SND_PSG	  ; Lectura del R7, resultado en A
-	and	#0b11000000	; Mascara para coger dos bits de joys 
-	or	B		        ; Añado Byte de B
-	
-  ld 7(IY),A  ;ld (IY+7),A   
-  
-  ret
-
-
-
-
-NOISE_C_ON:
-  res 5,B
-  ret
-
-*/
 
 
