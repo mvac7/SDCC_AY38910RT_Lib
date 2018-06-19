@@ -1,6 +1,8 @@
-# SDCC C PSG AY38910 Functions Library (object type)
+# SDCC C PSG AY-3-8910 Functions Library (object type)
 
-Version: v1.3 (11 March 2018)
+Version: v1.4
+
+Date: 17/06/2018
 
 Author: mvac7/303bcn
 
@@ -16,14 +18,30 @@ mail: mvac7303b@gmail.com
 
 
 
-Doc version: 1.0.1
+Doc version: 1.0.2
 
 ## Document changes
 
+- 1.0.2 (19 June 2018)
+    + Add history of versions.
 - 1.0.1 (25 March 2018):
     + Reviewed text.
 - 1.0 (11 March 2018): 
     + Initial version.
+
+
+## History of versions:
+
+- v1.4 (17/06/2018)
+    + corrected a BUG in the SOUND function
+    + change name function Sound to SOUND
+- v1.3 (11/02/2018)
+    + Revised and first publication.
+- v1.2 (?)
+- v1.1 (14/02/2014)
+    + Initial version.
+- v1.0 (?)
+
 
 
 ## 1. Introduction:
@@ -99,7 +117,7 @@ of the numerical form:
 ## 5 Functions
 
 
-* Sound(register, value) - Write into a register of PSG
+* SOUND(register, value) - Write into a register of PSG
 * GetSound(register) - Read PSG register value
 * SetTonePeriod(channel, period) - Set Tone Period for any channel
 * SetNoisePeriod(period) - Set Noise Period
