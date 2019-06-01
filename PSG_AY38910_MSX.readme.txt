@@ -41,7 +41,8 @@ Index:
 2 Acknowledgments.
 3 Requirements
 4 Constants
-  4.1 Envelope shapes 
+  4.1 AY Registers
+  4.2 Envelope shapes 
 
 5 Functions
   5.1 SOUND(register, value)
@@ -116,8 +117,21 @@ respectively.
 --------------------------------------------------------------------------------
 4 Constants
 
-
-  4.1 Envelope shapes
+  4.1 AY Registers
+  
+  * AY_ToneA = 0  ---> Channel A Tone Period (12 bits)
+  * AY_ToneB = 2  ---> Channel B Tone Period (12 bits)
+  * AY_ToneC = 4  ---> Channel C Tone Period (12 bits)
+  * AY_Noise = 6  ---> Noise Period (5 bits)
+  * AY_Mixer = 7  ---> Mixer
+  * AY_AmplA = 8  ---> Channel Volume A (4 bits + B5 active Envelope)
+  * AY_AmplB = 9  ---> Channel Volume B (4 bits + B5 active Envelope)
+  * AY_AmplC = 10 ---> Channel Volume C (4 bits + B5 active Envelope)
+  * AY_Env   = 11 ---> Envelope Period (12 bits)
+  * AY_EnvTp = 13 ---> Envelope Type
+  
+  
+  4.2 Envelope shapes
 
   The header file defines envelope shapes in case you prefer to use it instead 
   of the numerical form:
