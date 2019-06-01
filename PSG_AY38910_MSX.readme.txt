@@ -44,7 +44,7 @@ Index:
   4.1 Envelope shapes 
 
 5 Functions
-  5.1 Sound(register, value)
+  5.1 SOUND(register, value)
   5.2 GetSound(register)
   5.3 SetTonePeriod(channel, period)
   5.4 SetNoisePeriod(period)
@@ -137,7 +137,7 @@ respectively.
 
 
 ================================================================================
-5.1 Sound(register, value)
+5.1 SOUND(register, value)
 
  Function : Write into a register of PSG
  Input    : [char] register number (0 to 13)

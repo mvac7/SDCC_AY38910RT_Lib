@@ -40,6 +40,19 @@
  
 
 
+//AY registers
+#define AY_TonA  0
+#define AY_TonB  2
+#define AY_TonC  4
+#define AY_Noise 6
+#define AY_Mixer 7
+#define AY_AmplA 8
+#define AY_AmplB 9
+#define AY_AmplC 10
+#define AY_Env   11
+#define AY_EnvTp 13
+
+
 
 
 /* =============================================================================
