@@ -41,16 +41,16 @@
 
 
 //AY registers
-#define AY_ToneA 0  //12 bits
-#define AY_ToneB 2  //12 bits
-#define AY_ToneC 4  //12 bits
-#define AY_Noise 6  //5 bits
-#define AY_Mixer 7
-#define AY_AmplA 8  //4 bits + B5 active Envelope
-#define AY_AmplB 9  //4 bits + B5 active Envelope
-#define AY_AmplC 10 //4 bits + B5 active Envelope
-#define AY_Env   11 //12 bits
-#define AY_EnvTp 13
+#define AY_ToneA 0  //Channel A Tone Period (12 bits)
+#define AY_ToneB 2  //Channel B Tone Period (12 bits)
+#define AY_ToneC 4  //Channel C Tone Period (12 bits)
+#define AY_Noise 6  //Noise Period (5 bits)
+#define AY_Mixer 7  //Mixer
+#define AY_AmplA 8  //Channel Volume A (4 bits + B5 active Envelope)
+#define AY_AmplB 9  //Channel Volume B (4 bits + B5 active Envelope)
+#define AY_AmplC 10 //Channel Volume C (4 bits + B5 active Envelope)
+#define AY_Env   11 //Envelope Period (12 bits)
+#define AY_EnvTp 13 //Envelope Type
 
 
 
