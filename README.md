@@ -73,6 +73,7 @@ Thanks for Info & help, to:
 * Avelino Herrera > http://msx.atlantes.org/index_es.html
 * Nerlaska > http://albertodehoyonebot.blogspot.com.es
 * Fubu > http://www.gamerachan.org/fubu/
+* Iggy Rock/WYZ > https://sites.google.com/site/wyzplayer/home
 * Marq/Lieves!Tuore > http://www.kameli.net/lt/
 * Sapphire/Z80ST > http://z80st.auic.es/
 * Pentacour > http://pentacour.com/

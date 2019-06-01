@@ -117,19 +117,19 @@ void test1()
   LOCATE(0,6);
   PRINT(" Press a key to stop sound");
 
-  SOUND(0,100);//tone period channel A (2B)
-  SOUND(1,10); 
-  SOUND(6,100); //noise
-  SOUND(7,0B00110110); //Mixer
-  SOUND(8,16); //channel A envelope on
-  SOUND(11,100);//envelope period (2B)
-  SOUND(12,10); // 
-  SOUND(13,14); //envelope wave type
+  SOUND(AY_ToneA,100);//tone period channel A (2 Bytes)
+  SOUND(AY_ToneA+1,10); 
+  SOUND(AY_Noise,100); //noise
+  SOUND(AY_Mixer,0B00110110); //Mixer (Don't worry! The bits of the joysticks are added in the function)
+  SOUND(AY_AmplA,16); //channel A envelope on
+  SOUND(AY_Env,100);//envelope period (2B)
+  SOUND(AY_Env+1,10); // 
+  SOUND(AY_EnvTp,14); //envelope wave type
   
   INKEY();
   
-  SOUND(8,0); //silencia
-  SOUND(13,0);
+  SOUND(AY_AmplA,0); //silence channel A
+  SOUND(AY_EnvTp,0);
   
   WAIT(PAUSE_TIME);
 }

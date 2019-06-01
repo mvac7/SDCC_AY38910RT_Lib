@@ -41,15 +41,15 @@
 
 
 //AY registers
-#define AY_TonA  0
-#define AY_TonB  2
-#define AY_TonC  4
-#define AY_Noise 6
+#define AY_ToneA 0  //12 bits
+#define AY_ToneB 2  //12 bits
+#define AY_ToneC 4  //12 bits
+#define AY_Noise 6  //5 bits
 #define AY_Mixer 7
-#define AY_AmplA 8
-#define AY_AmplB 9
-#define AY_AmplC 10
-#define AY_Env   11
+#define AY_AmplA 8  //4 bits + B5 active Envelope
+#define AY_AmplB 9  //4 bits + B5 active Envelope
+#define AY_AmplC 10 //4 bits + B5 active Envelope
+#define AY_Env   11 //12 bits
 #define AY_EnvTp 13
 
 
