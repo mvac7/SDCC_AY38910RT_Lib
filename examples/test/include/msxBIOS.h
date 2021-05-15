@@ -1,4 +1,4 @@
-// MSX 1 BIOS v1
+// MSX 1 BIOS v1.1
 // definitions & descriptions by MSX Assembly Page
 // only includes descriptions. For details see the WEB document in:
 // http://map.grauw.nl/resources/msxbios.php
@@ -75,7 +75,7 @@
 #define ISCNTC  0x00BA // Tests status of SHIFT-STOP 
 #define CKCNTC  0x00BD // Same as ISCNTC. used in Basic
 #define BEEP    0x00C0 // generates beep
-#define BCLS     0x00C3 // Clears the screen
+#define BCLS    0x00C3 // Clears the screen
 #define POSIT   0x00C6 // Places the cursor at the specified location
 #define FNKSB   0x00C9 /* Tests whether the function key display is active (FNKFLG)
                           If so, displays them, otherwise erase them */
@@ -102,7 +102,8 @@
 #define LFTQ    0x00F6 // Gives number of bytes in queue
 #define PUTQ    0x00F9 // Put byte in queue
 
-// Graphic routines                      
+// Graphic routines
+//More info (MSX Assembly Page): http://map.grauw.nl/resources/msxbios.php                      
 #define RIGHTC  0x00FC // Shifts screenpixel to the right
 #define LEFTC   0x00FF // Shifts screenpixel to the left
 #define UPC     0x0102 // Shifts screenpixel up
@@ -121,6 +122,16 @@
 #define PNTINI  0x0129 // Initalises the PAINT instruction
 #define SCANR   0x012C // Scans screenpixels to the right
 #define SCANL   0x012F // Scans screenpixels to the left
+
+// Graphic routines MSX2 
+//More info (MSX Assembly Page): http://map.grauw.nl/resources/msxbios.php#msx2bios
+#define CHKNEW  0x0165 //Tests screen mode > C-flag set if screenmode = 5, 6, 7 or 8
+#define BIGFIL  0x016B //fill VRAM with value (total VRAM can be reached) HL address, BC length, A data
+#define NSETRD  0x016E //Enable VDP to read.(with full 16 bits VRAM-address)
+#define NSTWRT  0x0171 //Enable VDP to write.(with full 16 bits VRAM-address) 
+#define NRDVRM  0x0174 //Reads VRAM like in RDVRM.(with full 16 bits VRAM-address)
+#define NWRVRM  0x0177 //Writes to VRAM like in WRTVRM.(with full 16 bits VRAM-address)
+
                      
 // Misc routines
 #define CHGCAP  0x0132 // Alternates the CAP lamp status
