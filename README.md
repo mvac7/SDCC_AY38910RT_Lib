@@ -136,30 +136,34 @@ The library does not contain an initialization function so it is recommended to 
 ---
 ## AY-3-8910 Register Table
 
+<style>
+  .tittv {background-color:#0073e6;color:#FFFFFF}
+</style>
+
 <table>
-<tr>
+<tr style="background-color:#0073e6;color:#FFFFFF">
 <td colspan=2>Register\bit</td><td width=50 align=center> B7 </td><td width=50 align=center> B6 </td><td width=50 align=center> B5 </td><td width=50 align=center> B4 </td><td width=50 align=center> B3 </td><td width=50 align=center> B2 </td><td width=50 align=center> B1 </td><td width=50 align=center> B0 </td>
 </tr>
 <tr>
-<td>R0</td><td rowspan=2>Channel A Tone Period</td><td colspan=8 align=center>8-Bit Fine Tune A</td>
+<td class="tittv">R0</td><td rowspan=2>Channel A Tone Period</td><td colspan=8 align=center>8-Bit Fine Tune A</td>
 </tr>
 <tr>
-<td>R1</td><td colspan=4 bgcolor=gray></td><td colspan=4 align=center>4-Bit Coarse Tune A</td>
+<td>R1</td><td colspan=4 style="background-color:#b3b3b3"></td><td colspan=4 align=center>4-Bit Coarse Tune A</td>
 </tr>
 <tr>
 <td>R2</td><td rowspan=2>Channel B Tone Period</td><td colspan=8 align=center>8-Bit Fine Tune B</td>
 </tr>
 <tr>
-<td>R3</td><td colspan=4 bgcolor=gray></td><td colspan=4 align=center>4-Bit Coarse Tune B</td>
+<td>R3</td><td colspan=4 style="background-color:#b3b3b3"></td><td colspan=4 align=center>4-Bit Coarse Tune B</td>
 </tr>
 <tr>
 <td>R4</td><td rowspan=2>Channel C Tone Period</td><td colspan=8 align=center>8-Bit Fine Tune C</td>
 </tr>
 <tr>
-<td>R5</td><td colspan=4 bgcolor=gray></td><td colspan=4 align=center>4-Bit Coarse Tune C</td>
+<td>R5</td><td colspan=4 style="background-color:#b3b3b3"></td><td colspan=4 align=center>4-Bit Coarse Tune C</td>
 </tr>
 <tr>
-<td>R6</td><td>Noise period</td><td colspan=3 bgcolor=gray></td><td colspan=5 align=center>5-Bit Period control</td>
+<td>R6</td><td>Noise period</td><td colspan=3 style="background-color:#b3b3b3"></td><td colspan=5 align=center>5-Bit Period control</td>
 </tr>
 <tr>
 <td rowspan=2>R7</td><td rowspan=2>Enable (bit 0=on, 1=off)</td><td colspan=2 align=center>IN/OUT</td><td colspan=3 align=center>Noise</td><td colspan=3 align=center>Tone</td></tr>
@@ -169,13 +173,13 @@ The library does not contain an initialization function so it is recommended to 
 <td align=center>B</td><td align=center>A</td>
 </tr>
 <tr>
-<td>R8</td><td>Channel A Amplitude</td><td colspan=2 bgcolor=gray></td><td align=center>Env</td><td colspan=5 align=center>Amplitude</td>
+<td>R8</td><td>Channel A Amplitude</td><td colspan=2 style="background-color:#b3b3b3"></td><td align=center>Env</td><td colspan=5 align=center>Amplitude</td>
 </tr>
 <tr>
-<td>R9</td><td>Channel B Amplitude</td><td colspan=2 bgcolor=gray></td><td align=center>Env</td><td colspan=5 align=center>Amplitude</td>
+<td>R9</td><td>Channel B Amplitude</td><td colspan=2 style="background-color:#b3b3b3"></td><td align=center>Env</td><td colspan=5 align=center>Amplitude</td>
 </tr>
 <tr>
-<td>R10</td><td>Channel C Amplitude</td><td colspan=2 bgcolor=gray></td><td align=center>Env</td><td colspan=5 align=center>Amplitude</td>
+<td>R10</td><td>Channel C Amplitude</td><td colspan=2 style="background-color:#b3b3b3"></td><td align=center>Env</td><td colspan=5 align=center>Amplitude</td>
 </tr>
 <tr>
 <td>R11</td><td rowspan=2>Envelope Period</td><td colspan=8 align=center>8-Bit Fine Tune Envelope</td>
@@ -184,7 +188,7 @@ The library does not contain an initialization function so it is recommended to 
 <td>R12</td><td colspan=8 align=center>8-Bit Coarse Tune Envelope</td>
 </tr>
 <tr>
-<td>R13</td><td>Envelope Shape/Cycle</td><td colspan=4 bgcolor=gray></td><td>CONT</td><td>ATT</td><td>ALT</td><td>HOLD</td>
+<td>R13</td><td>Envelope Shape/Cycle</td><td colspan=4 style="background-color:#b3b3b3"></td><td>CONT</td><td>ATT</td><td>ALT</td><td>HOLD</td>
 </tr>
 <tr>
 <td>R14</td><td>I/O Port A Data Store</td><td colspan=8 align=center>8-Bit Parallel I/O on Port A</td>
