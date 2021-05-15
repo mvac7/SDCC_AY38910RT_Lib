@@ -137,8 +137,8 @@ The library does not contain an initialization function so it is recommended to 
 ## AY-3-8910 Register Table
 
 <table>
-<tr bgcolor="#0073e6">
-<td colspan=2>Register\bit</td><td width=50 align=center> B7 </td><td width=50 align=center> B6 </td><td width=50 align=center> B5 </td><td width=50 align=center> B4 </td><td width=50 align=center> B3 </td><td width=50 align=center> B2 </td><td width=50 align=center> B1 </td><td width=50 align=center> B0 </td>
+<tr>
+<td colspan=2 bgcolor=SteelBlue>Register\bit</td><td width=50 align=center bgcolor="#0073e6"> B7 </td><td width=50 align=center bgcolor="#0073e6"> B6 </td><td width=50 align=center bgcolor="#0073e6"> B5 </td><td width=50 align=center bgcolor="#0073e6"> B4 </td><td width=50 align=center bgcolor="#0073e6"> B3 </td><td width=50 align=center> B2 </td><td width=50 align=center bgcolor="#0073e6"> B1 </td><td width=50 align=center bgcolor="#0073e6"> B0 </td>
 </tr>
 <tr>
 <td>R0</td><td rowspan=2>Channel A Tone Period</td><td colspan=8 align=center>8-Bit Fine Tune A</td>
