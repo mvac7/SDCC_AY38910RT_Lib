@@ -138,7 +138,7 @@ The library does not contain an initialization function so it is recommended to 
 
 <table>
 <tr>
-<th colspan=2>Register\bit</th><th width=50 align=center> B7 </th><th width=50 align=center> B6 </th><th width=50 align=center> B5 </th><th width=50 align=center> B4 </th><th width=50 align=center> B3 </th><th width=50 align=center> B2 </th><th width=50 align=center> B1 </th><th width=50 align=center> B0 </th>
+<th colspan=2>Register\bit</th><th width=50>B7</th><th width=50>B6</th><th width=50>B5</th><th width=50>B4</th><th width=50>B3</th><th width=50>B2</th><th width=50>B1</th><th width=50>B0</th>
 </tr>
 <tr>
 <td>R0</td><td rowspan=2>Channel A Tone Period</td><td colspan=8 align=center>8-Bit Fine Tune A</td>
