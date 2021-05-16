@@ -23,7 +23,7 @@ It incorporates the SOUND function with the same behavior as the command include
 
 It allows to use the internal PSG of the MSX or an external one (like the one incorporated in the MEGAFLASHROM SCC +).
 
-In the header file there is a definition of boolean type, need for the functions.
+In the header file there is a definition of boolean type, needed for the functions.
 This type uses the values "true" or "false" in lowercase, which equals 1 and 0 respectively.
 
 Include definitions to improve the readability of your programs.
@@ -91,9 +91,12 @@ AY_ENV_RightSaw      | 12
 AY_ENV_UpperHold     | 13
 AY_ENV_UpperTriangle | 14
 
-*Attention!* The LowerBeat form is produced with the values: 0, 1, 2 and 3. 
-The value 1 has been assigned, since 0 can be useful in cases where it is required to have control of when the envelope is fired 
-(every time is written to register 13, the sound with the assigned shape is started).
+**Attention!** The LowerBeat shape may be produced with the values: 0, 1, 2, 3 and 9. 
+The value 1 has been assigned to *LowerBeat* as 0 can be useful in case you need to control when the envelope is triggered. In this case 0 can act as a "don't
+write the envelop" event. Remember that, every time the register 13 is written, the sound with the assigned shape is started.
+
+The Upper shape may be produced with the values: 4, 5, 6, 7 and 15.
+
 
 
 ### AY channels
