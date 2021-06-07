@@ -1,6 +1,6 @@
 /* =============================================================================
    PSG AY-3-8910 MSX SDCC Library (fR3eL Project)
-   Version: 1.5 (09/05/2020)
+   Version: 1.6 (07/06/2021)
    Author: mvac7
    Architecture: MSX
    Format: C Object (SDCC .rel)
@@ -12,7 +12,8 @@
      MSX-DOS executables.
      
    History of versions:
-    v1.5 (09/05/2020) External AY
+    v1.6 (07/06/2021) fixes problem with reading the registers in the MEGAFLASHROM SCC++
+    v1.5 (09/05/2021) External AY
     v1.4 (17/06/2018) Corrected a BUG in the SOUND function.  Sound to SOUND.
     v1.3 (11/02/2018) Revised and first publication.
     v1.1 (14/02/2014) 
@@ -32,6 +33,9 @@
 
 
 boolean isAYextern;  // true/1 = Extern AY  Else Intern AY
+
+char AY_reg7;
+//char AYREGS[14];
 
 
 
@@ -59,17 +63,23 @@ __asm
   ld   A,(#_isAYextern)
   cp   #1
   jr   NZ,CheckReg7
-  ld   C,#AY1index       ;set extern AY
+  
+  ld   C,#AY1index     ;set extern AY
+  ld   A,E             ;check if it is register 7
+  cp   #7              ;
+  jr   NZ,writeAY      ;IF not = 7 goto writeAY
+  ld   A,D
+  ld   (#_AY_reg7),A  ; save value in variable for extern AY
+  jr   writeAY
 
 CheckReg7:  
-  ;control del registro 7
-  ld   A,E
-  cp   #7
-  jr   NZ,writeAY      ;IF not register 7 goto writeAY
+  ld   A,E             ;check if it is register 7
+  cp   #7              ;
+  jr   NZ,writeAY      ;IF not = 7 goto writeAY
   
-; Yes  
+; Yes
   ld   A,D
-  AND  #0b00111111
+  AND  #0b00111111     ;reset the two PSG I/O bits 
   ld   D,A
       
   ld   A,#7
@@ -77,18 +87,16 @@ CheckReg7:
   inc  C
   inc  C            ; the reading port is positioned 
   in   A,(C)  
-  and  #0b11000000	; Mascara para coger dos bits de joys 
-  or   D		    ; Añado Byte de B
-  ld   D,A
+  and  #0b11000000	; Mask to catch the two PSG I/O bits  
+  or   D		    ; and add the new value.
+  
   dec  C            ; go back to index port
   dec  C
   
-writeAY:
-  ld   A,E    
-  out  (C),A
+writeAY:    
+  out  (C),E        ; register number
   inc  C            ; go to write port
-  ld   A,D
-  out  (C),A
+  out  (C),D
 
   pop  IX
   ret
@@ -99,7 +107,10 @@ __endasm;
 
 
 /* =============================================================================
- GetSound(register) 
+ GetSound(register)
+ 
+ NOTICE! This function does not work with the MAGAFLASHROM SCC+
+         because the PSG has not implemented the reading of the registers. 
 
  Function : Read PSG register value
  Input    : [char] register number (0 to 13)
@@ -125,9 +136,7 @@ ReadAYreg:
   out  (C),A
   inc  C
   inc  C            ; the reading port is positioned
-  in   A,(C)
-  
-  ld   L,A
+  in   L,(C)
   
   pop  IX
   ret  
@@ -205,7 +214,10 @@ void SetVolume(char channel, char volume){
 void SetChannel(char channel, boolean isTone, boolean isNoise)
 {
   char newValue=0;
-  newValue = GetSound(7); 
+  
+  if(isAYextern==true) newValue = AY_reg7;
+  else newValue = GetSound(7);
+   
   //el control de los dos bits de I/O del registro 7 
   //se hace en la función Sound
   if(channel==0) 
@@ -244,24 +256,22 @@ void PlayEnvelope(char shape){
 
 
 /*  
-// DUMP 
+// DUMP
+// buffer to intern AY fast copy  ####################
+void PlayAY() __naked
+{
+__asm
+  push IX
+  
+  ld HL,#_AYREGS
 
-;buffer to intern AY fast copy  ####################
-_RAM2PSG::
-  ld HL,#AY0_RAM
-  call RAM2AY0
-  ret
-
-
-;RAM2PSG fast copy  ####################
-RAM2AY0:
   ;internal PSG
   xor A	
-	ld BC,#0x0DA1  ;0D=13 > num de regs; A1 > port
+  ld BC,#0x0DA1  ;0D=13 > num de regs; A1 > port
 ILOOP:
   out (#0xA0),A
   inc A
-  outi  
+  outi          ; out(C),(HL) / inc HL / dec B
   JR NZ,ILOOP
   
   ;Envelope wave (reg 13)    
@@ -269,11 +279,16 @@ ILOOP:
   cp #0  
   ret Z
   
-  dec A  ;el valor esta incrementado para usar 0 como nulo
+  ;dec A  ;el valor esta incrementado para usar 0 como nulo
   ld E,A
-  ld D,#13
-  jp SET_SND_PSG  ;si no es 0, dispara la envolvente
-
+  ld A,#13
+  out (#0xA0),A
+  out (C),E
+  
+  pop  IX
+  ret
+__endasm;
+}
 */
 
 

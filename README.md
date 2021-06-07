@@ -40,6 +40,7 @@ Enjoy it!
 ---
 ## History of versions
 
+* v1.6 (07/06/2021) Fixes problem with reading the registers in the MEGAFLASHROM SCC++
 * v1.5 (09/05/2021) External AY
 * v1.4 (17/06/2018) Corrected a BUG in the SOUND function.  Change name function Sound to SOUND.
 * v1.3 (11/02/2018) Revised and first publication.
