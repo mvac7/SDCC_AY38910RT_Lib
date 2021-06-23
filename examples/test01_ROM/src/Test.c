@@ -19,7 +19,7 @@
 #include "../include/keyboard.h"
 #include "../include/VDP_TMS9918A_MSXROM.h"
 #include "../include/VDP_PRINT.h"
-#include "../include/AY38910.h"
+#include "../include/AY38910RT.h"
 #include "../include/unRLEWBtoVRAM.h"
 
 #include "../include/Test_GFX.h"

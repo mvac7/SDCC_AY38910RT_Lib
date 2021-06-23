@@ -1,5 +1,5 @@
 /* =============================================================================
-   PSG AY-3-8910 MSX SDCC Library (fR3eL Project)
+   PSG AY-3-8910 RT MSX SDCC Library (fR3eL Project)
    Version: 1.6 (07/06/2021)
    Author: mvac7
    Architecture: MSX
@@ -7,18 +7,22 @@
    Programming language: C and Z80 assembler
 
    Description:                                                              
-     Opensource library for acces to PSG AY-3-8910
+     Opensource library for access to internal or external MSX PSG AY-3-8910 
+     in Real Time.
+     
      It does not use the BIOS so it can be used to program ROMs or 
      MSX-DOS executables.
      
    History of versions:
-    v1.6 (07/06/2021) fixes problem with reading the registers in the MEGAFLASHROM SCC++
+    v1.6 (07/06/2021) fixes problem with reading the registers in the 
+                      external AY from MEGAFLASHROM SCC++
     v1.5 (09/05/2021) External AY
     v1.4 (17/06/2018) Corrected a BUG in the SOUND function.  Sound to SOUND.
     v1.3 (11/02/2018) Revised and first publication.
     v1.1 (14/02/2014) 
 ============================================================================= */
-#include "../include/AY38910.h"
+#include "../include/AY38910RT.h"
+
 
 //intern MSX AY
 #define AY0index 0xA0
@@ -252,44 +256,6 @@ void PlayEnvelope(char shape){
   SOUND(13,shape);
 }
 
-
-
-
-/*  
-// DUMP
-// buffer to intern AY fast copy  ####################
-void PlayAY() __naked
-{
-__asm
-  push IX
-  
-  ld HL,#_AYREGS
-
-  ;internal PSG
-  xor A	
-  ld BC,#0x0DA1  ;0D=13 > num de regs; A1 > port
-ILOOP:
-  out (#0xA0),A
-  inc A
-  outi          ; out(C),(HL) / inc HL / dec B
-  JR NZ,ILOOP
-  
-  ;Envelope wave (reg 13)    
-  ld A,(HL)
-  cp #0  
-  ret Z
-  
-  ;dec A  ;el valor esta incrementado para usar 0 como nulo
-  ld E,A
-  ld A,#13
-  out (#0xA0),A
-  out (C),E
-  
-  pop  IX
-  ret
-__endasm;
-}
-*/
 
 
 

@@ -1,4 +1,4 @@
-# PSG AY-3-8910 MSX SDCC Library (fR3eL Project)
+# PSG AY-3-8910 RT MSX SDCC Library (fR3eL Project)
 
 ```
 Author: mvac7 [mvac7303b@gmail.com]
@@ -11,7 +11,7 @@ Programming language: C and Z80 assembler
 ---
 ## Description
 
-This project is an opensource library with basic functions for work with PSG AY-3-8910 or compatible. 
+This project is an opensource library functions for access to internal or external MSX PSG AY-3-8910 in Real Time. 
 
 Designed for developing MSX applications using Small Device C Compiler (SDCC).
   
@@ -72,7 +72,7 @@ AY_Mixer     |  7 | Mixer
 AY_AmpA      |  8 | Channel Volume A (4 bits + B5 active Envelope)
 AY_AmpB      |  9 | Channel Volume B (4 bits + B5 active Envelope)
 AY_AmpC      | 10 | Channel Volume C (4 bits + B5 active Envelope)
-AY_EnvPeriod | 11 | Envelope Period (12 bits)
+AY_EnvPeriod | 11 | Envelope Period (16 bits)
 AY_EnvShape  | 13 | Envelope Shape
 
 

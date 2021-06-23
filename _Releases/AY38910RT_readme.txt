@@ -1,4 +1,4 @@
-PSG AY-3-8910 MSX SDCC Library (fR3eL Project)
+PSG AY-3-8910 RT MSX SDCC Library (fR3eL Project)
 Version: v1.5
 Date: 09/05/2021
 Author: mvac7
@@ -10,6 +10,10 @@ Project WEB: https://github.com/mvac7/SDCC_AY38910_Lib
 
 --------------------------------------------------------------------------------    
 History of versions:
+
+- v1.6 (07/06/2021) 
+    + fixes problem with reading the registers in the external AY 
+      from MEGAFLASHROM SCC++
 
 - v1.5 (09/05/2021) 
     + External AY    
@@ -58,8 +62,8 @@ Index:
 --------------------------------------------------------------------------------
 1. Introduction:
 
-This project is an opensource library (object type), with basic functions for 
-work with PSG AY-3-8910 or compatible. 
+This project is an opensource library functions for access to internal or 
+external MSX PSG AY-3-8910 in Real Time.  
 
 Designed for developing MSX applications using Small Device C Compiler (SDCC).
   
