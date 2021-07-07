@@ -1,7 +1,7 @@
 # PSG AY-3-8910 RT MSX SDCC Library (fR3eL Project)
 
 ```
-Author: mvac7 [mvac7303b@gmail.com]
+Author: mvac7
 Architecture: MSX
 Format: C Object (SDCC .rel)
 Programming language: C and Z80 assembler
@@ -204,21 +204,22 @@ The library does not contain an initialization function so it is recommended to 
   
 I want to give a special thanks to all those who freely share their knowledge with the MSX developer community.
 
-* Avelino Herrera > [WEB](http://msx.atlantes.org/index_es.html)
-* Nerlaska > [Blog](http://albertodehoyonebot.blogspot.com.es)
-* Marq/Lieves!Tuore > [Marq](http://www.kameli.net/marq/) [Lieves!Tuore](http://www.kameli.net/lt/)
-* [Fubukimaru](https://github.com/Fubukimaru) > [Blog](http://www.gamerachan.org/fubu/)
-* Andrear > [Blog](http://andrear.altervista.org/home/msxsoftware.php)
-* Ramones > [MSXblog](https://www.msxblog.es/tutoriales-de-programacion-en-ensamblador-ramones/) - [MSXbanzai](http://msxbanzai.tni.nl/dev/faq.html)
-* Sapphire/Z80ST > [WEB](http://z80st.auic.es/)
-* Fernando García > [youTube](https://www.youtube.com/user/bitvision)
-* Eric Boez > [gitHub](https://github.com/ericb59)
-* MSX Assembly Page > [WEB](http://map.grauw.nl/resources/msxbios.php)
-* Portar MSX Tech Doc > [WEB](http://nocash.emubase.de/portar.htm)
-* MSX Resource Center > [WEB](http://www.msx.org/)
-* Karoshi MSX Community (RIP 2007-2020)
-* BlueMSX emulator >> [WEB](http://www.bluemsx.com/)
-* OpenMSX emulator >> [WEB](http://openmsx.sourceforge.net/)
+* Avelino Herrera > [(WEB)](http://msx.avelinoherrera.com/index_es.html)
+* Nerlaska > [(Blog)](http://albertodehoyonebot.blogspot.com.es)
+* Marq > [(Marq)](http://www.kameli.net/marq/)
+* MSXKun/Paxanga soft > [(WEB)](http://paxangasoft.retroinvaders.com/)
+* Fubukimaru [(gitHub)](https://github.com/Fubukimaru)
+* Andrear > [(Blog)](http://andrear.altervista.org/home/msxsoftware.php)
+* Sapphire/Z80ST > [(WEB)](http://z80st.auic.es/)
+* Fernando García > [(Curso)](http://www.z80st.es/cursos/bitvision-assembler)
+* Ramones > [(MSXblog)](https://www.msxblog.es/tutoriales-de-programacion-en-ensamblador-ramones/) - [(MSXbanzai)](http://msxbanzai.tni.nl/dev/faq.html)
+* Eric Boez > [(gitHub)](https://github.com/ericb59)
+* MSX Assembly Page > [(WEB)](http://map.grauw.nl/resources/msxbios.php)
+* Portar MSX Tech Doc > [(WEB)](https://problemkaputt.de/portar.htm)
+* MSX Resource Center > [(WEB)](http://www.msx.org/)
+* Karoshi MSX Community > [(WEB)](http://karoshi.auic.es/)
+* BlueMSX emulator >> [(WEB)](http://www.bluemsx.com/)
+* OpenMSX emulator >> [(WEB)](http://openmsx.sourceforge.net/)
 * Meisei emulator >> ?
 
 
