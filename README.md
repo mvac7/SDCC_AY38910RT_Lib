@@ -30,7 +30,7 @@ Include definitions to improve the readability of your programs.
 
 In the source code (\examples), you can find applications for testing and learning purposes.
 
-![TEST AY Lib](https://raw.githubusercontent.com/mvac7/SDCC_AY38910_Lib/master/examples/test/GFX/TESTAY_screenshot.png) 
+![TEST AY Lib](https://raw.githubusercontent.com/mvac7/SDCC_AY38910RT_Lib/master/examples/test01_ROM/GFX/TESTAY_screenshot.png) 
 
 This library is part of the [MSX fR3eL Project](https://github.com/mvac7/SDCC_MSX_fR3eL).
 
