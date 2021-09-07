@@ -117,7 +117,9 @@ AY_Channel_C | 2
 <table>
 <tr><th colspan=2>SOUND</th></tr>
 <tr><td colspan=2>Write into a register of PSG</td></tr>
-<tr><td colspan=2>```SOUND(register, value)```</td></tr>
+<tr><td colspan=2>
+```SOUND(register, value)```
+</td></tr>
 <tr><th>register</th><td>[char] register number (0 to 13)</td></tr>
 <tr><th>value</th><td>[char] value</td></tr>
 </table>
@@ -125,7 +127,7 @@ AY_Channel_C | 2
 <table>
 <tr><th colspan=2>GetSound</th></tr>
 <tr><td colspan=2>Read PSG register value</td></tr>
-<tr><td colspan=2>```GetSound(register)```</td></tr>
+<tr><td colspan=2> ```GetSound(register)``` </td></tr>
 <tr><th>register</th><td>[char] register number (0 to 13)</td></tr>
 <tr><th>Output</th><td>[char] value</td></tr>
 </table>
