@@ -21,7 +21,7 @@ Reading or writing to the PSG is done through calls to the assigned ports.
 
 It incorporates the SOUND function with the same behavior as the command included in MSX BASIC, as well as specific functions to modify the different sound parameters of the AY. 
 
-It allows to use the internal PSG of the MSX or an external one (like the one incorporated in the MEGAFLASHROM SCC +).
+It allows to use the internal PSG of the MSX or an external one (like the one incorporated in the MEGAFLASHROM SCC+, Flashjacks or other).
 
 In the header file there is a definition of boolean type, needed for the functions.
 This type uses the values "true" or "false" in lowercase, which equals 1 and 0 respectively.
@@ -52,7 +52,7 @@ Enjoy it!
 ---
 ## Requirements
 
-* Small Device C Compiler (SDCC) v3.9 http://sdcc.sourceforge.net/
+* Small Device C Compiler (SDCC) v4.1 > http://sdcc.sourceforge.net/
 * Hex2bin v2.5 http://hex2bin.sourceforge.net/
 
 
@@ -114,14 +114,69 @@ AY_Channel_C | 2
 ---  
 ## Functions
 
-* **SOUND**(register, value) - Write into a register of PSG
-* **GetSound**(register) - Read PSG register value
-* **SetTonePeriod**(channel, period) - Set Tone Period for any channel
-* **SetNoisePeriod**(period) - Set Noise Period
-* **SetEnvelopePeriod**(period) - Set Envelope Period
-* **SetVolume**(channel, volume) - Set volume channel
-* **SetChannel**(channel, isTone, isNoise) - Mixer. Enable/disable Tone and Noise channels.
-* **PlayEnvelope**(shape) - Set envelope type. Plays the sound on channels that have a volume of 16.
+<table>
+<tr><th colspan=2>SOUND</th></tr>
+<tr><th>Function</th><td>Write into a register of PSG</td></tr>
+<tr><td colspan=2>SOUND(register, value)</td></tr>
+<tr><th>register</th><td>[char] register number (0 to 13)</td></tr>
+<tr><th>value</th><td>[char] value</td></tr>
+</table>
+
+<table>
+<tr><th colspan=2>GetSound</th></tr>
+<tr><th>Function</th><td>Read PSG register value</td></tr>
+<tr><td colspan=2>GetSound(register)</td></tr>
+<tr><th>register</th><td>[char] register number (0 to 13)</td></tr>
+<tr><th>Output</th><td>[char] value</td></tr>
+</table>
+
+<table>
+<tr><th colspan=2>SetTonePeriod</th></tr>
+<tr><th>Function</th><td>Set Tone Period for any channel</td></tr>
+<tr><td colspan=2>SetTonePeriod(channel, period)</td></tr>
+<tr><th>channel</th><td>[char] channel (0, 1 or 2)</td></tr>
+<tr><th>period</th><td>[unsigned int] period (0 - 4095)</td></tr>
+</table>
+
+<table>
+<tr><th colspan=2>SetNoisePeriod</th></tr>
+<tr><th>Function</th><td>Set Noise Period</td></tr>
+<tr><td colspan=2>SetNoisePeriod(period)</td></tr>
+<tr><th>period</th><td>[char] Noise period (0 - 31)</td></tr>
+</table>
+
+<table>
+<tr><th colspan=2>SetEnvelopePeriod</th></tr>
+<tr><th>Function</th><td>Set Envelope Period</td></tr>
+<tr><td colspan=2>SetEnvelopePeriod(period)</td></tr>
+<tr><th>period</th><td>[unsigned int] Envelope period (0 - 65535)</td></tr>
+</table>
+
+<table>
+<tr><th colspan=2>SetVolume</th></tr>
+<tr><th>Function</th><td>Set volume channel</td></tr>
+<tr><td colspan=2>SetVolume(channel, volume)</td></tr>
+<tr><th>channel</th><td>[char] channel (0, 1 or 2)</td></tr>
+<tr><th>volume</th><td>[char] volume, 0 to 15 or 16 for activate envelope</td></tr>
+</table>
+
+<table>
+<tr><th colspan=2>SetChannel</th></tr>
+<tr><th>Function</th><td>Mixer. Enable/disable Tone and Noise channels.</td></tr>
+<tr><td colspan=2>SetChannel(channel, isTone, isNoise)</td></tr>
+<tr><th>channel</th><td>[char] channel (0, 1 or 2)</td></tr>
+<tr><th>isTone</th><td>[boolean] Tone channel state</td></tr>
+<tr><th>isNoise</th><td>[boolean] Noise channel state</td></tr>
+</table>
+
+<table>
+<tr><th colspan=2>PlayEnvelope</th></tr>
+<tr><th>Function</th><td>Set envelope type.<br/>Plays the sound on channels that have a volume of 16.</td></tr>
+<tr><td colspan=2>PlayEnvelope(shape)</td></tr>
+<tr><th>shape</th><td>[char] Envelope shape (0-15)</td></tr>
+</table>
+
+<br/>
 
 
 ---

@@ -7,7 +7,7 @@
       
    History of versions:
      v1.4 (07 July  2021) screen changes
-     v1.3 (10 May   2021) Test External AY (MEGAFLASHROM SCC+) + new GUI
+     v1.3 (10 May   2021) Test External AY (MEGAFLASHROM SCC+, Flashjacks or other) + new GUI
      v1.2 (18 June  2018)
      v1.1 (12 March 2018)
 ============================================================================= */
