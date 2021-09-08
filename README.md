@@ -175,11 +175,11 @@ AY_Channel_C | 2
 <tr><th>Function</th><td>PlayEnvelope(shape)</td></tr>
 <tr><th>shape</th><td>[char] Envelope shape (0-15)</td></tr>
 <tr><th>Examples:</th><td>
-```             
+<pre><code>             
 PlayEnvelope(0); //Play LowerBeat envelope shape
            
 PlayEnvelope(ENV_LowerTriangle); //Play LowerTriangle envelope shape
-```
+</code></pre>
 </td></tr>
 </table>
 
