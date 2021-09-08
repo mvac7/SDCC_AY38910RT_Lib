@@ -114,16 +114,16 @@ AY_Channel_C | 2
 ---  
 ## Functions
 
-<table width="400" >
-<tr><th colspan="2" align="left">SOUND</th></tr>
+<table width=400>
+<tr><th colspan=2 align="left">SOUND</th></tr>
 <tr><td colspan="2">Write into a register of PSG</td></tr>
 <tr><th>Function</th><td>SOUND(register, value)</td></tr>
 <tr><th>register</th><td>[char] register number (0 to 13)</td></tr>
 <tr><th>value</th><td>[char] value</td></tr>
 </table>
 
-<table>
-<tr><th colspan=2>GetSound</th></tr>
+<table width=80%>
+<tr width=400><th colspan=2 align="left">GetSound</th></tr>
 <tr><td colspan=2>Read PSG register value</td></tr>
 <tr><th>Function</th><td>GetSound(register)</td></tr>
 <tr><th>register</th><td>[char] register number (0 to 13)</td></tr>
@@ -131,7 +131,7 @@ AY_Channel_C | 2
 </table>
 
 <table>
-<tr><th colspan=2>SetTonePeriod</th></tr>
+<tr><th colspan=2 align="left">SetTonePeriod</th></tr>
 <tr><td colspan=2>Set Tone Period for any channel</td></tr>
 <tr><th>Function</th><td>SetTonePeriod(channel, period)</td></tr>
 <tr><th>channel</th><td>[char] channel (0, 1 or 2)</td></tr>
@@ -139,21 +139,21 @@ AY_Channel_C | 2
 </table>
 
 <table>
-<tr><th colspan=2>SetNoisePeriod</th></tr>
+<tr><th colspan=2 align="left">SetNoisePeriod</th></tr>
 <tr><td colspan=2>Set Noise Period</td></tr>
 <tr><th>Function</th><td>SetNoisePeriod(period)</td></tr>
 <tr><th>period</th><td>[char] Noise period (0 - 31)</td></tr>
 </table>
 
 <table>
-<tr><th colspan=2>SetEnvelopePeriod</th></tr>
+<tr><th colspan=2 align="left">SetEnvelopePeriod</th></tr>
 <tr><td colspan=2>Set Envelope Period</td></tr>
 <tr><th>Function</th><td>SetEnvelopePeriod(period)</td></tr>
 <tr><th>period</th><td>[unsigned int] Envelope period (0 - 65535)</td></tr>
 </table>
 
 <table>
-<tr><th colspan=2>SetVolume</th></tr>
+<tr><th colspan=2 align="left">SetVolume</th></tr>
 <tr><td colspan=2>Set volume channel</td></tr>
 <tr><th>Function</th><td>SetVolume(channel, volume)</td></tr>
 <tr><th>channel</th><td>[char] channel (0, 1 or 2)</td></tr>
@@ -161,7 +161,7 @@ AY_Channel_C | 2
 </table>
 
 <table>
-<tr><th colspan=2>SetChannel</th></tr>
+<tr><th colspan=2 align="left">SetChannel</th></tr>
 <tr><td colspan=2>Mixer. Enable/disable Tone and Noise channels.</td></tr>
 <tr><th>Function</th><td>SetChannel(channel, isTone, isNoise)</td></tr>
 <tr><th>channel</th><td>[char] channel (0, 1 or 2)</td></tr>
@@ -170,7 +170,7 @@ AY_Channel_C | 2
 </table>
 
 <table>
-<tr><th colspan=2>PlayEnvelope</th></tr>
+<tr><th colspan=2 align="left">PlayEnvelope</th></tr>
 <tr><td colspan=2>Set envelope type.<br/>Plays the sound on channels that have a volume of 16.</td></tr>
 <tr><th>Function</th><td>PlayEnvelope(shape)</td></tr>
 <tr><th>shape</th><td>[char] Envelope shape (0-15)</td></tr>
