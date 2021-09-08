@@ -23,7 +23,7 @@
 * Hex2bin v2.5 http://hex2bin.sourceforge.net/
 
 
-
+<br/>
 ---
 ## 2 Definitions
 
@@ -42,6 +42,7 @@ AY_AmpC      | 10 | Channel Volume C (4 bits + B5 active Envelope)
 AY_EnvPeriod | 11 | Envelope Period (16 bits)
 AY_EnvShape  | 13 | Envelope Shape
 
+<br/>
 
 ### 2.2 Envelope shapes
 
@@ -65,7 +66,7 @@ write the envelop" event. Remember that, every time the register 13 is written, 
 
 The Upper shape may be produced with the values: 4, 5, 6, 7 and 15.
 
-
+<br/>
 
 ### 2.3 AY channels
 
@@ -77,7 +78,7 @@ AY_Channel_A | 0
 AY_Channel_B | 1
 AY_Channel_C | 2
 
-
+<br/>
 ---  
 ## 3 Functions
 
@@ -195,7 +196,7 @@ To select an external AY, like the one included in the MegaFlashROM SCC+ (ports 
 
 The library does not contain an initialization function so it is recommended to provide a value to this variable at the beginning of your program.
 
-
+<br/>
 ---
 ## 5 Appendices
 
@@ -262,7 +263,7 @@ The library does not contain an initialization function so it is recommended to 
 
 
 
-
+<br/>
 ---
 ## 6 References
 

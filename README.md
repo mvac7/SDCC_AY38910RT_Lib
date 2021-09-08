@@ -28,7 +28,7 @@ This type uses the values "true" or "false" in lowercase, which equals 1 and 0 r
 
 Include definitions to improve the readability of your programs.
 
-You can access the documentation here with [/HOWTO.md](How to use the library).
+You can access the documentation here with [How to use the library](https://github.com/mvac7/SDCC_AY38910RT_Lib/blob/master/HOWTO.md).
 
 In the source code (\examples), you can find applications for testing and learning purposes.
 
