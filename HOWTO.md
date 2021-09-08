@@ -11,7 +11,7 @@
 - 3 Functions
 - 4 Set Internal or External AY
 - 5 Appendices
-   - 5.1  
+   - 5.1 AY-3-8910 Register Table  
 - 6 References
    
 <br/>
@@ -24,6 +24,7 @@
 
 
 <br/>
+
 ---
 ## 2 Definitions
 
@@ -79,6 +80,7 @@ AY_Channel_B | 1
 AY_Channel_C | 2
 
 <br/>
+
 ---  
 ## 3 Functions
 
@@ -181,8 +183,7 @@ PlayEnvelope(ENV_LowerTriangle); //Play LowerTriangle envelope shape</code></pre
 </td></tr>
 </table>
 
-<br/>
-
+<br/> 
 
 ---
 ## 4 Set Internal or External AY
@@ -197,6 +198,7 @@ To select an external AY, like the one included in the MegaFlashROM SCC+ (ports 
 The library does not contain an initialization function so it is recommended to provide a value to this variable at the beginning of your program.
 
 <br/>
+
 ---
 ## 5 Appendices
 
@@ -264,6 +266,7 @@ The library does not contain an initialization function so it is recommended to 
 
 
 <br/>
+
 ---
 ## 6 References
 
