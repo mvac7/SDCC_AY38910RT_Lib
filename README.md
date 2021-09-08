@@ -172,12 +172,12 @@ AY_Channel_C | 2
 <table>
 <tr><th colspan=2 align="left">PlayEnvelope</th></tr>
 <tr><td colspan=2>Set envelope type.<br/>Plays the sound on channels that have a volume of 16.</td></tr>
-<tr><th>Function</th><td>PlayEnvelope(shape)</td></tr>
+<tr><th>Function</th><td><pre><code>PlayEnvelope(shape)</code></pre></td></tr>
 <tr><th>shape</th><td>[char] Envelope shape (0-15)</td></tr>
 <tr><th>Examples:</th><td>
 <pre><code>             
 PlayEnvelope(0); //Play LowerBeat envelope shape
-           
+<br/>           
 PlayEnvelope(ENV_LowerTriangle); //Play LowerTriangle envelope shape
 </code></pre>
 </td></tr>
