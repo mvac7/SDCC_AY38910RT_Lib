@@ -120,6 +120,10 @@ AY_Channel_C | 2
 <tr><th>Function</th><td>SOUND(register, value)</td></tr>
 <tr><th>register</th><td>[char] register number (0 to 13)</td></tr>
 <tr><th>value</th><td>[char] value</td></tr>
+<tr><th>Output</th><td> --- </td></tr>
+<tr><th>Examples:</th><td>
+<pre><code>Sound(8,16); //channel A envelope on</code></pre>
+</td></tr>
 </table>
 
 <table>
@@ -128,6 +132,10 @@ AY_Channel_C | 2
 <tr><th>Function</th><td>GetSound(register)</td></tr>
 <tr><th>register</th><td>[char] register number (0 to 13)</td></tr>
 <tr><th>Output</th><td>[char] value</td></tr>
+<tr><th>Examples:</th><td>
+<pre><code>char value;            
+value = GetSound(7);  //read mixer register</code></pre>
+</td></tr>
 </table>
 
 <table>
@@ -136,6 +144,10 @@ AY_Channel_C | 2
 <tr><th>Function</th><td>SetTonePeriod(channel, period)</td></tr>
 <tr><th>channel</th><td>[char] channel (0, 1 or 2)</td></tr>
 <tr><th>period</th><td>[unsigned int] period (0 - 4095)</td></tr>
+<tr><th>Output</th><td> --- </td></tr>
+<tr><th>Examples:</th><td>
+<pre><code>SetTonePeriod(AY_Channel_B,1100);  //set tone period for channel A</code></pre>
+</td></tr>
 </table>
 
 <table>
@@ -143,6 +155,10 @@ AY_Channel_C | 2
 <tr><td colspan=2>Set Noise Period</td></tr>
 <tr><th>Function</th><td>SetNoisePeriod(period)</td></tr>
 <tr><th>period</th><td>[char] Noise period (0 - 31)</td></tr>
+<tr><th>Output</th><td> --- </td></tr>
+<tr><th>Examples:</th><td>
+<pre><code>SetNoisePeriod(10);</code></pre>
+</td></tr>
 </table>
 
 <table>
@@ -150,6 +166,10 @@ AY_Channel_C | 2
 <tr><td colspan=2>Set Envelope Period</td></tr>
 <tr><th>Function</th><td>SetEnvelopePeriod(period)</td></tr>
 <tr><th>period</th><td>[unsigned int] Envelope period (0 - 65535)</td></tr>
+<tr><th>Output</th><td> --- </td></tr>
+<tr><th>Examples:</th><td>
+<pre><code>SetEnvelopePeriod(1000);</code></pre>
+</td></tr>
 </table>
 
 <table>
@@ -158,6 +178,11 @@ AY_Channel_C | 2
 <tr><th>Function</th><td>SetVolume(channel, volume)</td></tr>
 <tr><th>channel</th><td>[char] channel (0, 1 or 2)</td></tr>
 <tr><th>volume</th><td>[char] volume, 0 to 15 or 16 for activate envelope</td></tr>
+<tr><th>Output</th><td> --- </td></tr>
+<tr><th>Examples:</th><td>
+<pre><code>SetVolume(0,14);  // set 14 volume level for channel A
+SetVolume(1,16);  // activate envelope for channel B</code></pre>
+</td></tr>
 </table>
 
 <table>
@@ -167,19 +192,24 @@ AY_Channel_C | 2
 <tr><th>channel</th><td>[char] channel (0, 1 or 2)</td></tr>
 <tr><th>isTone</th><td>[boolean] Tone channel state</td></tr>
 <tr><th>isNoise</th><td  width=300>[boolean] Noise channel state</td></tr>
+<tr><th>Output</th><td> --- </td></tr>
+<tr><th>Examples:</th><td>
+<pre><code>SetChannel(0,true,false);
+SetChannel(1,true,true);
+SetChannel(2,false,false);</code></pre>
+</td></tr>
 </table>
 
 <table>
 <tr><th colspan=2 align="left">PlayEnvelope</th></tr>
 <tr><td colspan=2>Set envelope type.<br/>Plays the sound on channels that have a volume of 16.</td></tr>
-<tr><th>Function</th><td><pre><code>PlayEnvelope(shape)</code></pre></td></tr>
+<tr><th>Function</th><td>PlayEnvelope(shape)</td></tr>
 <tr><th>shape</th><td>[char] Envelope shape (0-15)</td></tr>
+<tr><th>Output</th><td> --- </td></tr>
 <tr><th>Examples:</th><td>
-<pre><code>             
-PlayEnvelope(0); //Play LowerBeat envelope shape
+<pre><code>PlayEnvelope(0); //Play LowerBeat envelope shape
 <br/>           
-PlayEnvelope(ENV_LowerTriangle); //Play LowerTriangle envelope shape
-</code></pre>
+PlayEnvelope(ENV_LowerTriangle); //Play LowerTriangle envelope shape</code></pre>
 </td></tr>
 </table>
 
