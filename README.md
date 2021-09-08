@@ -114,12 +114,10 @@ AY_Channel_C | 2
 ---  
 ## Functions
 
-<table>
-<tr><th colspan=2>SOUND</th></tr>
-<tr><td colspan=2>Write into a register of PSG</td></tr>
-<tr><th>Function</th><td>
-`SOUND(register, value)`
-</td></tr>
+<table width="400" >
+<tr><th colspan="2" align="left">SOUND</th></tr>
+<tr><td colspan="2">Write into a register of PSG</td></tr>
+<tr><th>Function</th><td>SOUND(register, value)</td></tr>
 <tr><th>register</th><td>[char] register number (0 to 13)</td></tr>
 <tr><th>value</th><td>[char] value</td></tr>
 </table>
@@ -127,7 +125,7 @@ AY_Channel_C | 2
 <table>
 <tr><th colspan=2>GetSound</th></tr>
 <tr><td colspan=2>Read PSG register value</td></tr>
-<tr><th>Function</th><td> `GetSound(register)` </td></tr>
+<tr><th>Function</th><td>GetSound(register)</td></tr>
 <tr><th>register</th><td>[char] register number (0 to 13)</td></tr>
 <tr><th>Output</th><td>[char] value</td></tr>
 </table>
@@ -135,7 +133,7 @@ AY_Channel_C | 2
 <table>
 <tr><th colspan=2>SetTonePeriod</th></tr>
 <tr><td colspan=2>Set Tone Period for any channel</td></tr>
-<tr><th>Function</th><td>`SetTonePeriod(channel, period)`</td></tr>
+<tr><th>Function</th><td>SetTonePeriod(channel, period)</td></tr>
 <tr><th>channel</th><td>[char] channel (0, 1 or 2)</td></tr>
 <tr><th>period</th><td>[unsigned int] period (0 - 4095)</td></tr>
 </table>
@@ -143,21 +141,21 @@ AY_Channel_C | 2
 <table>
 <tr><th colspan=2>SetNoisePeriod</th></tr>
 <tr><td colspan=2>Set Noise Period</td></tr>
-<tr><th>Function</th><td>`SetNoisePeriod(period)`</td></tr>
+<tr><th>Function</th><td>SetNoisePeriod(period)</td></tr>
 <tr><th>period</th><td>[char] Noise period (0 - 31)</td></tr>
 </table>
 
 <table>
 <tr><th colspan=2>SetEnvelopePeriod</th></tr>
 <tr><td colspan=2>Set Envelope Period</td></tr>
-<tr><th>Function</th><td>`SetEnvelopePeriod(period)` </td></tr>
+<tr><th>Function</th><td>SetEnvelopePeriod(period)</td></tr>
 <tr><th>period</th><td>[unsigned int] Envelope period (0 - 65535)</td></tr>
 </table>
 
 <table>
 <tr><th colspan=2>SetVolume</th></tr>
 <tr><td colspan=2>Set volume channel</td></tr>
-<tr><th>Function</th><td>`SetVolume(channel, volume)`</td></tr>
+<tr><th>Function</th><td>SetVolume(channel, volume)</td></tr>
 <tr><th>channel</th><td>[char] channel (0, 1 or 2)</td></tr>
 <tr><th>volume</th><td>[char] volume, 0 to 15 or 16 for activate envelope</td></tr>
 </table>
@@ -165,7 +163,7 @@ AY_Channel_C | 2
 <table>
 <tr><th colspan=2>SetChannel</th></tr>
 <tr><td colspan=2>Mixer. Enable/disable Tone and Noise channels.</td></tr>
-<tr><th>Function</th><td>`SetChannel(channel, isTone, isNoise)`</td></tr>
+<tr><th>Function</th><td>SetChannel(channel, isTone, isNoise)</td></tr>
 <tr><th>channel</th><td>[char] channel (0, 1 or 2)</td></tr>
 <tr><th>isTone</th><td>[boolean] Tone channel state</td></tr>
 <tr><th>isNoise</th><td>[boolean] Noise channel state</td></tr>
@@ -174,7 +172,7 @@ AY_Channel_C | 2
 <table>
 <tr><th colspan=2>PlayEnvelope</th></tr>
 <tr><td colspan=2>Set envelope type.<br/>Plays the sound on channels that have a volume of 16.</td></tr>
-<tr><th>Function</th><td>`PlayEnvelope(shape)`</td></tr>
+<tr><th>Function</th><td>PlayEnvelope(shape)</td></tr>
 <tr><th>shape</th><td>[char] Envelope shape (0-15)</td></tr>
 </table>
 
@@ -202,56 +200,56 @@ The library does not contain an initialization function so it is recommended to 
 <th colspan=2>Register\bit</th><th width=50>B7</th><th width=50>B6</th><th width=50>B5</th><th width=50>B4</th><th width=50>B3</th><th width=50>B2</th><th width=50>B1</th><th width=50>B0</th>
 </tr>
 <tr>
-<td>R0</td><td rowspan=2>Channel A Tone Period</td><td colspan=8 align=center>8-Bit Fine Tune A</td>
+<td>R0</td><td rowspan=2>Channel A Tone Period</td><td colspan=8 align="center">8-Bit Fine Tune A</td>
 </tr>
 <tr>
-<td>R1</td><td colspan=4></td><td colspan=4 align=center>4-Bit Coarse Tune A</td>
+<td>R1</td><td colspan=4></td><td colspan=4 align="center">4-Bit Coarse Tune A</td>
 </tr>
 <tr>
 <td>R2</td><td rowspan=2>Channel B Tone Period</td><td colspan=8 align=center>8-Bit Fine Tune B</td>
 </tr>
 <tr>
-<td>R3</td><td colspan=4></td><td colspan=4 align=center>4-Bit Coarse Tune B</td>
+<td>R3</td><td colspan=4></td><td colspan=4 align="center">4-Bit Coarse Tune B</td>
 </tr>
 <tr>
 <td>R4</td><td rowspan=2>Channel C Tone Period</td><td colspan=8 align=center>8-Bit Fine Tune C</td>
 </tr>
 <tr>
-<td>R5</td><td colspan=4></td><td colspan=4 align=center>4-Bit Coarse Tune C</td>
+<td>R5</td><td colspan=4></td><td colspan=4 align="center">4-Bit Coarse Tune C</td>
 </tr>
 <tr>
 <td>R6</td><td>Noise period</td><td colspan=3></td><td colspan=5 align=center>5-Bit Period control</td>
 </tr>
 <tr>
-<td rowspan=2>R7</td><td rowspan=2>Enable (bit 0=on, 1=off)</td><td colspan=2 align=center>IN/OUT</td><td colspan=3 align=center>Noise</td><td colspan=3 align=center>Tone</td></tr>
+<td rowspan=2>R7</td><td rowspan=2>Enable (bit 0=on, 1=off)</td><td colspan=2 align="center">IN/OUT</td><td colspan=3 align="center">Noise</td><td colspan=3 align="center">Tone</td></tr>
 <tr>
-<td align=center> IOB</td><td align=center>IOA</td><td align=center>C</td>
-<td align=center>B</td><td align=center>A</td><td align=center>C</td>
-<td align=center>B</td><td align=center>A</td>
+<td align=center> IOB</td><td align="center">IOA</td><td align="center">C</td>
+<td align=center>B</td><td align="center">A</td><td align="center">C</td>
+<td align=center>B</td><td align="center">A</td>
 </tr>
 <tr>
-<td>R8</td><td>Channel A Amplitude</td><td colspan=2></td><td align=center>Env</td><td colspan=5 align=center>Amplitude</td>
+<td>R8</td><td>Channel A Amplitude</td><td colspan=2></td><td align="center">Env</td><td colspan=5 align="center">Amplitude</td>
 </tr>
 <tr>
-<td>R9</td><td>Channel B Amplitude</td><td colspan=2></td><td align=center>Env</td><td colspan=5 align=center>Amplitude</td>
+<td>R9</td><td>Channel B Amplitude</td><td colspan=2></td><td align="center">Env</td><td colspan=5 align="center">Amplitude</td>
 </tr>
 <tr>
-<td>R10</td><td>Channel C Amplitude</td><td colspan=2></td><td align=center>Env</td><td colspan=5 align=center>Amplitude</td>
+<td>R10</td><td>Channel C Amplitude</td><td colspan=2></td><td align="center">Env</td><td colspan=5 align="center">Amplitude</td>
 </tr>
 <tr>
-<td>R11</td><td rowspan=2>Envelope Period</td><td colspan=8 align=center>8-Bit Fine Tune Envelope</td>
+<td>R11</td><td rowspan=2>Envelope Period</td><td colspan=8 align="center">8-Bit Fine Tune Envelope</td>
 </tr>
 <tr>
-<td>R12</td><td colspan=8 align=center>8-Bit Coarse Tune Envelope</td>
+<td>R12</td><td colspan=8 align="center">8-Bit Coarse Tune Envelope</td>
 </tr>
 <tr>
 <td>R13</td><td>Envelope Shape/Cycle</td><td colspan=4></td><td>CONT</td><td>ATT</td><td>ALT</td><td>HOLD</td>
 </tr>
 <tr>
-<td>R14</td><td>I/O Port A Data Store</td><td colspan=8 align=center>8-Bit Parallel I/O on Port A</td>
+<td>R14</td><td>I/O Port A Data Store</td><td colspan=8 align="center">8-Bit Parallel I/O on Port A</td>
 </tr>
 <tr>
-<td>R15</td><td>I/O Port B Data Store</td><td colspan=8 align=center>8-Bit Parallel I/O on Port B</td>
+<td>R15</td><td>I/O Port B Data Store</td><td colspan=8 align="center">8-Bit Parallel I/O on Port B</td>
 </tr>
 </table>
 
