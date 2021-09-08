@@ -114,7 +114,7 @@ AY_Channel_C | 2
 ---  
 ## Functions
 
-<table width=400>
+<table>
 <tr><th colspan=2 align="left">SOUND</th></tr>
 <tr><td colspan="2">Write into a register of PSG</td></tr>
 <tr><th>Function</th><td>SOUND(register, value)</td></tr>
@@ -122,8 +122,8 @@ AY_Channel_C | 2
 <tr><th>value</th><td>[char] value</td></tr>
 </table>
 
-<table width=80%>
-<tr width=400><th colspan=2 align="left">GetSound</th></tr>
+<table>
+<tr><th colspan=2 align="left">GetSound</th></tr>
 <tr><td colspan=2>Read PSG register value</td></tr>
 <tr><th>Function</th><td>GetSound(register)</td></tr>
 <tr><th>register</th><td>[char] register number (0 to 13)</td></tr>
@@ -166,7 +166,7 @@ AY_Channel_C | 2
 <tr><th>Function</th><td>SetChannel(channel, isTone, isNoise)</td></tr>
 <tr><th>channel</th><td>[char] channel (0, 1 or 2)</td></tr>
 <tr><th>isTone</th><td>[boolean] Tone channel state</td></tr>
-<tr><th>isNoise</th><td>[boolean] Noise channel state</td></tr>
+<tr><th>isNoise</th><td  width=300>[boolean] Noise channel state</td></tr>
 </table>
 
 <table>
@@ -174,6 +174,13 @@ AY_Channel_C | 2
 <tr><td colspan=2>Set envelope type.<br/>Plays the sound on channels that have a volume of 16.</td></tr>
 <tr><th>Function</th><td>PlayEnvelope(shape)</td></tr>
 <tr><th>shape</th><td>[char] Envelope shape (0-15)</td></tr>
+<tr><th>Examples:</th><td>
+```             
+PlayEnvelope(0); //Play LowerBeat envelope shape
+           
+PlayEnvelope(ENV_LowerTriangle); //Play LowerTriangle envelope shape
+```
+</td></tr>
 </table>
 
 <br/>
