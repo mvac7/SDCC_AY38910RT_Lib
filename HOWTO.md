@@ -3,16 +3,16 @@
 
 ---
 ## Index
-- [1 Requirements](#1_Requirements)
-- [2 Definitions](#2_Definitions)
-   - [2.1 AY Registers](#2.1_AY_Registers)
-   - [2.2 Envelope shapes](#2.2_Envelope_shapes)
-   - [2.3 AY channels](#2.3_AY_channels)
-- [3 Functions](#3_Functions)
-- [4 Set Internal or External AY](#4_Set_Internal_or_External_AY)
-- [5 Appendices](#5_Appendices)
-   - [5.1 AY-3-8910 Register Table](#5.1_AY-3-8910_Register_Table)  
-- [6 References](#6_References)
+- [1 Requirements](#1-Requirements)
+- [2 Definitions](#2-Definitions)
+   - [2.1 AY Registers](#21-AY-Registers)
+   - [2.2 Envelope shapes](#22-Envelope-shapes)
+   - [2.3 AY channels](#23-AY-channels)
+- [3 Functions](#3-Functions)
+- [4 Set Internal or External AY](#4-Set-Internal-or-External-AY)
+- [5 Appendices](#5-Appendices)
+   - [5.1 AY-3-8910 Register Table](#51-AY-3-8910-Register-Table)  
+- [6 References](#6-References)
    
 <br/>
 
