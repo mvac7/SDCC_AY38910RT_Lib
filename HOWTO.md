@@ -3,24 +3,24 @@
 
 ---
 ## Index
-- 1 Requirements
-- 2 Definitions
-   - 2.1 AY Registers
-   - 2.2 Envelope shapes
-   - 2.3 AY channels
-- 3 Functions
-- 4 Set Internal or External AY
-- 5 Appendices
-   - 5.1 AY-3-8910 Register Table  
-- 6 References
+- [1 Requirements](#1_Requirements)
+- [2 Definitions](#2_Definitions)
+   - [2.1 AY Registers](#2.1_AY_Registers)
+   - [2.2 Envelope shapes](#2.2_Envelope_shapes)
+   - [2.3 AY channels](#2.3_AY_channels)
+- [3 Functions](#3_Functions)
+- [4 Set Internal or External AY](#4_Set_Internal_or_External_AY)
+- [5 Appendices](#5_Appendices)
+   - [5.1 AY-3-8910 Register Table](#5.1_AY-3-8910_Register_Table)  
+- [6 References](#6_References)
    
 <br/>
 
 ---
 ## 1 Requirements
 
-* Small Device C Compiler (SDCC) v4.1 > http://sdcc.sourceforge.net/
-* Hex2bin v2.5 http://hex2bin.sourceforge.net/
+- Small Device C Compiler (SDCC) v4.1 > http://sdcc.sourceforge.net/
+- Hex2bin v2.5 http://hex2bin.sourceforge.net/
 
 
 <br/>
@@ -31,7 +31,7 @@
 ### 2.1 AY Registers
 
 Label | Value | Description
--- | -- | -- 
+:--- | ---: | :--- 
 AY_ToneA     |  0 | Channel A Tone Period (12 bits)
 AY_ToneB     |  2 | Channel B Tone Period (12 bits)
 AY_ToneC     |  4 | Channel C Tone Period (12 bits)
@@ -51,7 +51,7 @@ The header file defines envelope shapes in case you prefer to use it instead
 of the numerical form:
 
 Label | Value
--- | --  
+:--- | ---:  
 AY_ENV_LowerBeat     | 1 
 AY_ENV_Upper         | 4 
 AY_ENV_LeftSaw       | 8
@@ -74,7 +74,7 @@ The Upper shape may be produced with the values: 4, 5, 6, 7 and 15.
 You can use it in the functions: SetTonePeriod, SetVolume and SetChannel
 
 Label | Value
--- | -- 
+:--- | ---: 
 AY_Channel_A | 0
 AY_Channel_B | 1
 AY_Channel_C | 2
@@ -188,7 +188,7 @@ PlayEnvelope(ENV_LowerTriangle); //Play LowerTriangle envelope shape</code></pre
 ---
 ## 4 Set Internal or External AY
 
-To indicate in which PSG the sounds are to be played, you have the **isAYextern** variable. 
+To indicate in which PSG the sounds are to be played, you have the `isAYextern` variable. 
 To select an external AY, like the one included in the MegaFlashROM SCC+ (ports 10h to 12h), you have to set the variable to true (or 1).
 
 ```
@@ -270,5 +270,6 @@ The library does not contain an initialization function so it is recommended to 
 ---
 ## 6 References
 
-* [General Instrument AY-3-8910 (wikipedia)](https://en.wikipedia.org/wiki/General_Instrument_AY-3-8910)
-* [GI AY-3-8910 Datasheet (PDF)](http://map.grauw.nl/resources/sound/generalinstrument_ay-3-8910.pdf)
+- General Instrument AY-3-8910 [`wikipedia`](https://en.wikipedia.org/wiki/General_Instrument_AY-3-8910)
+- GI AY-3-8910 Datasheet [`PDF`](http://map.grauw.nl/resources/sound/generalinstrument_ay-3-8910.pdf)
+- The MSX Red Book [3. Programmable Sound Generator](https://github.com/gseidler/The-MSX-Red-Book/blob/master/the_msx_red_book.md#chapter_3)

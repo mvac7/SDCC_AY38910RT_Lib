@@ -42,20 +42,20 @@ Enjoy it!
 ---
 ## History of versions
 
-* v1.6 (07/06/2021) Fixes problem with reading the registers in the MEGAFLASHROM SCC++
-* v1.5 (09/05/2021) External AY
-* v1.4 (17/06/2018) Corrected a BUG in the SOUND function.  Change name function Sound to SOUND.
-* v1.3 (11/02/2018) Revised and first publication.
-* v1.2 (?) ?
-* v1.1 (14/02/2014) Initial version.
-* v1.0 (?) ?
+- v1.6 (07/06/2021) Fixes problem with reading the registers in the MEGAFLASHROM SCC++
+- v1.5 (09/05/2021) External AY
+- v1.4 (17/06/2018) Corrected a BUG in the SOUND function.  Change name function Sound to SOUND.
+- v1.3 (11/02/2018) Revised and first publication.
+- v1.2 (?) ?
+- v1.1 (14/02/2014) Initial version.
+- v1.0 (?) ?
 
 
 ---
 ## Requirements
 
-* Small Device C Compiler (SDCC) v4.1 > http://sdcc.sourceforge.net/
-* Hex2bin v2.5 http://hex2bin.sourceforge.net/
+- Small Device C Compiler (SDCC) v4.1 > http://sdcc.sourceforge.net/
+- Hex2bin v2.5 http://hex2bin.sourceforge.net/
 
 
 
@@ -64,27 +64,21 @@ Enjoy it!
   
 I want to give a special thanks to all those who freely share their knowledge with the MSX developer community.
 
-* Avelino Herrera > [(WEB)](http://msx.avelinoherrera.com/index_es.html)
-* Nerlaska > [(Blog)](http://albertodehoyonebot.blogspot.com.es)
-* Marq > [(Marq)](http://www.kameli.net/marq/)
-* MSXKun/Paxanga soft > [(WEB)](http://paxangasoft.retroinvaders.com/)
-* Fubukimaru [(gitHub)](https://github.com/Fubukimaru)
-* Andrear > [(Blog)](http://andrear.altervista.org/home/msxsoftware.php)
-* Sapphire/Z80ST > [(WEB)](http://z80st.auic.es/)
-* Fernando García > [(Curso)](http://www.z80st.es/cursos/bitvision-assembler)
-* Ramones > [(MSXblog)](https://www.msxblog.es/tutoriales-de-programacion-en-ensamblador-ramones/) - [(MSXbanzai)](http://msxbanzai.tni.nl/dev/faq.html)
-* Eric Boez > [(gitHub)](https://github.com/ericb59)
-* MSX Assembly Page > [(WEB)](http://map.grauw.nl/resources/msxbios.php)
-* Portar MSX Tech Doc > [(WEB)](https://problemkaputt.de/portar.htm)
-* MSX Resource Center > [(WEB)](http://www.msx.org/)
-* Karoshi MSX Community > [(WEB)](http://karoshi.auic.es/)
-* BlueMSX emulator >> [(WEB)](http://www.bluemsx.com/)
-* OpenMSX emulator >> [(WEB)](http://openmsx.sourceforge.net/)
-* Meisei emulator >> ?
+* Avelino Herrera > [`WEB`](http://msx.avelinoherrera.com/index_es.html)
+* Nerlaska > [`Blog`](http://albertodehoyonebot.blogspot.com.es)
+* Marq > [`Marq`](http://www.kameli.net/marq/)
+* MSXKun/Paxanga soft > [`WEB`](http://paxangasoft.retroinvaders.com/)
+* Fubukimaru [`gitHub`](https://github.com/Fubukimaru)
+* Andrear > [`Blog`](http://andrear.altervista.org/home/msxsoftware.php)
+* Sapphire/Z80ST > [`WEB`](http://z80st.auic.es/)
+* Fernando García > [`Video Tutorial`](http://www.z80st.es/cursos/bitvision-assembler)
+* Ramones > [`MSXblog`](https://www.msxblog.es/tutoriales-de-programacion-en-ensamblador-ramones/) - [`MSXbanzai`](http://msxbanzai.tni.nl/dev/faq.html)
+* Eric Boez > [`gitHub`](https://github.com/ericb59)
+* MSX Assembly Page > [`WEB`](http://map.grauw.nl/resources/msxbios.php)
+* Portar MSX Tech Doc > [`WEB`](https://problemkaputt.de/portar.htm)
+* MSX Resource Center > [`WEB`](http://www.msx.org/)
+* Karoshi MSX Community > [`WEB`](http://karoshi.auic.es/)
+* BlueMSX emulator >> [`WEB`](http://www.bluemsx.com/)
+* OpenMSX emulator >> [`WEB`](http://openmsx.sourceforge.net/)
+* Meisei emulator by Hap >> ?
 
-
----
-## References
-
-* [General Instrument AY-3-8910 (wikipedia)](https://en.wikipedia.org/wiki/General_Instrument_AY-3-8910)
-* [GI AY-3-8910 Datasheet (PDF)](http://map.grauw.nl/resources/sound/generalinstrument_ay-3-8910.pdf)
