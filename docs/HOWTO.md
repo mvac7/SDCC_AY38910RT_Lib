@@ -271,14 +271,19 @@ PlayEnvelope(ENV_LowerTriangle); //Play LowerTriangle envelope shape</code></pre
 
 ## 5 Set Internal or External AY
 
-To indicate in which PSG the sounds are to be played, you have the `isAYextern` variable. 
-To select an external AY, like the one included in the MegaFlashROM SCC+ (ports 10h to 12h), you have to set the variable to true (or 1).
+To indicate in which PSG the sounds are to be played, you have the `AY_TYPE` variable. 
+To select an external AY (ports 10h to 12h), like the one included in the MegaFlashROM SCC+, Flashjacks or other, you have to set the variable to 1 (or `AY_EXTERNAL`).
 
 ```
-  isAYextern = true;
+  AY_TYPE = AY_EXTERNAL;
 ```
 
-The library does not contain an initialization function so it is recommended to provide a value to this variable at the beginning of your program.
+If you want to use the internal AY, assign the value 0 (or `AY_INTERNAL`).
+
+| ATTENTION! |
+| ---------- | 
+| The library does not contain an initialization function so it is recommended to provide a value to this variable at the beginning of your program. |
+
 
 <br/>
 
