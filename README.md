@@ -28,9 +28,9 @@ This type uses the values "true" or "false" in lowercase, which equals 1 and 0 r
 
 Include definitions to improve the readability of your programs.
 
-You can access the documentation here with [How to use the library](https://github.com/mvac7/SDCC_AY38910RT_Lib/blob/master/HOWTO.md).
+You can access the documentation here with [`How to use the library`](docs/HOWTO.md).
 
-In the source code (\examples), you can find applications for testing and learning purposes.
+In the source code [`examples/`](examples/), you can find applications for testing and learning purposes.
 
 ![TEST AY Lib](https://raw.githubusercontent.com/mvac7/SDCC_AY38910RT_Lib/master/examples/test01_ROM/GFX/TESTAY_screenshot.png) 
 
@@ -64,21 +64,23 @@ Enjoy it!
   
 I want to give a special thanks to all those who freely share their knowledge with the MSX developer community.
 
-* Avelino Herrera > [`WEB`](http://msx.avelinoherrera.com/index_es.html)
-* Nerlaska > [`Blog`](http://albertodehoyonebot.blogspot.com.es)
-* Marq > [`Marq`](http://www.kameli.net/marq/)
-* MSXKun/Paxanga soft > [`WEB`](http://paxangasoft.retroinvaders.com/)
-* Fubukimaru [`gitHub`](https://github.com/Fubukimaru)
-* Andrear > [`Blog`](http://andrear.altervista.org/home/msxsoftware.php)
-* Sapphire/Z80ST > [`WEB`](http://z80st.auic.es/)
-* Fernando García > [`Video Tutorial`](http://www.z80st.es/cursos/bitvision-assembler)
-* Ramones > [`MSXblog`](https://www.msxblog.es/tutoriales-de-programacion-en-ensamblador-ramones/) - [`MSXbanzai`](http://msxbanzai.tni.nl/dev/faq.html)
-* Eric Boez > [`gitHub`](https://github.com/ericb59)
-* MSX Assembly Page > [`WEB`](http://map.grauw.nl/resources/msxbios.php)
-* Portar MSX Tech Doc > [`WEB`](https://problemkaputt.de/portar.htm)
-* MSX Resource Center > [`WEB`](http://www.msx.org/)
-* Karoshi MSX Community > [`WEB`](http://karoshi.auic.es/)
-* BlueMSX emulator >> [`WEB`](http://www.bluemsx.com/)
-* OpenMSX emulator >> [`WEB`](http://openmsx.sourceforge.net/)
-* Meisei emulator by Hap >> ?
+- Avelino Herrera > [`WEB`](http://msx.avelinoherrera.com/index_es.html)
+- Nerlaska > [`Blog`](http://albertodehoyonebot.blogspot.com.es)
+- Marq > [`Marq`](http://www.kameli.net/marq/)
+- MSXKun/Paxanga soft > [`WEB`](http://paxangasoft.retroinvaders.com/)
+- Fubukimaru [`gitHub`](https://github.com/Fubukimaru)
+- Andrear > [`Blog`](http://andrear.altervista.org/home/msxsoftware.php)
+- Sapphire/Z80ST > [`WEB`](http://z80st.auic.es/)
+- Fernando García > [`Video Tutorial`](http://www.z80st.es/cursos/bitvision-assembler)
+- Ramones > [`MSXblog`](https://www.msxblog.es/tutoriales-de-programacion-en-ensamblador-ramones/) - [`MSXbanzai`](http://msxbanzai.tni.nl/dev/faq.html)
+- Eric Boez > [`gitHub`](https://github.com/ericb59)
+- MSX Assembly Page > [`WEB`](http://map.grauw.nl/resources/msxbios.php)
+- Portar MSX Tech Doc > [`WEB`](https://problemkaputt.de/portar.htm)
+- MSX Resource Center > [`WEB`](http://www.msx.org/)
+- Karoshi MSX Community > [`WEB`](http://karoshi.auic.es/)
+- BlueMSX emulator >> [`WEB`](http://www.bluemsx.com/)
+- OpenMSX emulator >> [`WEB`](http://openmsx.sourceforge.net/)
+- [`WebMSX`](https://webmsx.org/) emulator by Paulo A. Peccin >> [`gitHub`](https://github.com/ppeccin/webmsx)
+- fMSX emulator by Marat Fayzullin [`WEB`](https://fms.komkon.org/fMSX/)
+- Meisei emulator by Hap >> `?`
 

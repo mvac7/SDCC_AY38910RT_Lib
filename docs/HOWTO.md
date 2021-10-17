@@ -3,35 +3,66 @@
 
 ---
 ## Index
-- [1 Requirements](#1-Requirements)
-- [2 Definitions](#2-Definitions)
-   - [2.1 AY Registers](#21-AY-Registers)
-   - [2.2 Envelope shapes](#22-Envelope-shapes)
-   - [2.3 AY channels](#23-AY-channels)
-- [3 Functions](#3-Functions)
-- [4 Set Internal or External AY](#4-Set-Internal-or-External-AY)
-- [5 Appendices](#5-Appendices)
-   - [5.1 AY-3-8910 Register Table](#51-AY-3-8910-Register-Table)  
-- [6 References](#6-References)
+- [1 Description](#1-Description)
+- [2 Requirements](#2-Requirements)
+- [3 Definitions](#3-Definitions)
+   - [3.1 AY Registers](#31-AY-Registers)
+   - [3.2 Envelope shapes](#32-Envelope-shapes)
+   - [3.3 AY channels](#33-AY-channels)
+- [4 Functions](#4-Functions)
+- [5 Set Internal or External AY](#5-Set-Internal-or-External-AY)
+- [6 Appendices](#6-Appendices)
+   - [6.1 AY-3-8910 Register Table](#61-AY-3-8910-Register-Table)  
+- [7 References](#7-References)
+
+
+<br/>
+
+---
+
+## 1 Description
+
+This project is an opensource library functions for access to internal or external MSX PSG AY-3-8910 in Real Time. 
+
+Designed for developing MSX applications using Small Device C Compiler (SDCC).
+  
+It does not use the BIOS so it can be used to program both ROMs or MSX-DOS executables.
+  
+Reading or writing to the PSG is done through calls to the assigned ports.
+
+It incorporates the SOUND function with the same behavior as the command included in MSX BASIC, as well as specific functions to modify the different sound parameters of the AY. 
+
+It allows to use the internal PSG of the MSX or an external one (like the one incorporated in the MEGAFLASHROM SCC+, Flashjacks or other).
+
+In the header file there is a definition of boolean type, needed for the functions.
+This type uses the values "true" or "false" in lowercase, which equals 1 and 0 respectively.
+
+Include definitions to improve the readability of your programs.
+
+This library is part of the [MSX fR3eL Project](https://github.com/mvac7/SDCC_MSX_fR3eL).
+
+Enjoy it!                           
+
    
 <br/>
 
 ---
-## 1 Requirements
 
-- Small Device C Compiler (SDCC) v4.1 > http://sdcc.sourceforge.net/
-- Hex2bin v2.5 http://hex2bin.sourceforge.net/
+## 2 Requirements
 
+- [Small Device C Compiler (SDCC) v4.1](http://sdcc.sourceforge.net/)
+- [Hex2bin v2.5](http://hex2bin.sourceforge.net/)
 
 <br/>
 
 ---
-## 2 Definitions
 
-### 2.1 AY Registers
+## 3 Definitions
+
+### 3.1 AY Registers
 
 Label | Value | Description
-:--- | ---: | :--- 
+:---  | ---:  | :--- 
 AY_ToneA     |  0 | Channel A Tone Period (12 bits)
 AY_ToneB     |  2 | Channel B Tone Period (12 bits)
 AY_ToneC     |  4 | Channel C Tone Period (12 bits)
@@ -45,13 +76,13 @@ AY_EnvShape  | 13 | Envelope Shape
 
 <br/>
 
-### 2.2 Envelope shapes
+### 3.2 Envelope shapes
 
 The header file defines envelope shapes in case you prefer to use it instead 
 of the numerical form:
 
 Label | Value
-:--- | ---:  
+:---  | ---:  
 AY_ENV_LowerBeat     | 1 
 AY_ENV_Upper         | 4 
 AY_ENV_LeftSaw       | 8
@@ -69,12 +100,12 @@ The Upper shape may be produced with the values: 4, 5, 6, 7 and 15.
 
 <br/>
 
-### 2.3 AY channels
+### 3.3 AY channels
 
 You can use it in the functions: SetTonePeriod, SetVolume and SetChannel
 
 Label | Value
-:--- | ---: 
+:---  | ---: 
 AY_Channel_A | 0
 AY_Channel_B | 1
 AY_Channel_C | 2
@@ -82,7 +113,9 @@ AY_Channel_C | 2
 <br/>
 
 ---  
-## 3 Functions
+## 4 Functions
+
+### 4.1 SOUND
 
 <table>
 <tr><th colspan=2 align="left">SOUND</th></tr>
@@ -96,6 +129,8 @@ AY_Channel_C | 2
 </td></tr>
 </table>
 
+### 4.2 GetSound
+
 <table>
 <tr><th colspan=2 align="left">GetSound</th></tr>
 <tr><td colspan=2>Read PSG register value</td></tr>
@@ -107,6 +142,8 @@ AY_Channel_C | 2
 value = GetSound(7);  //read mixer register</code></pre>
 </td></tr>
 </table>
+
+### 4.3 SetTonePeriod
 
 <table>
 <tr><th colspan=2 align="left">SetTonePeriod</th></tr>
@@ -120,6 +157,8 @@ value = GetSound(7);  //read mixer register</code></pre>
 </td></tr>
 </table>
 
+### 4.3 SetNoisePeriod
+
 <table>
 <tr><th colspan=2 align="left">SetNoisePeriod</th></tr>
 <tr><td colspan=2>Set Noise Period</td></tr>
@@ -131,6 +170,8 @@ value = GetSound(7);  //read mixer register</code></pre>
 </td></tr>
 </table>
 
+### 4.3 SetEnvelopePeriod
+
 <table>
 <tr><th colspan=2 align="left">SetEnvelopePeriod</th></tr>
 <tr><td colspan=2>Set Envelope Period</td></tr>
@@ -141,6 +182,8 @@ value = GetSound(7);  //read mixer register</code></pre>
 <pre><code>SetEnvelopePeriod(1000);</code></pre>
 </td></tr>
 </table>
+
+### 4.3 SetVolume
 
 <table>
 <tr><th colspan=2 align="left">SetVolume</th></tr>
@@ -154,6 +197,8 @@ value = GetSound(7);  //read mixer register</code></pre>
 SetVolume(1,16);  // activate envelope for channel B</code></pre>
 </td></tr>
 </table>
+
+### 4.3 SetChannel
 
 <table>
 <tr><th colspan=2 align="left">SetChannel</th></tr>
@@ -169,6 +214,8 @@ SetChannel(1,true,true);
 SetChannel(2,false,false);</code></pre>
 </td></tr>
 </table>
+
+### 4.3 PlayEnvelope
 
 <table>
 <tr><th colspan=2 align="left">PlayEnvelope</th></tr>
@@ -186,7 +233,7 @@ PlayEnvelope(ENV_LowerTriangle); //Play LowerTriangle envelope shape</code></pre
 <br/> 
 
 ---
-## 4 Set Internal or External AY
+## 5 Set Internal or External AY
 
 To indicate in which PSG the sounds are to be played, you have the `isAYextern` variable. 
 To select an external AY, like the one included in the MegaFlashROM SCC+ (ports 10h to 12h), you have to set the variable to true (or 1).
@@ -200,10 +247,10 @@ The library does not contain an initialization function so it is recommended to 
 <br/>
 
 ---
-## 5 Appendices
+## 6 Appendices
 
 
-### 5.1 AY-3-8910 Register Table
+### 6.1 AY-3-8910 Register Table
 
 <table>
 <tr>
@@ -268,8 +315,15 @@ The library does not contain an initialization function so it is recommended to 
 <br/>
 
 ---
-## 6 References
+## 7 References
 
 - General Instrument AY-3-8910 [`wikipedia`](https://en.wikipedia.org/wiki/General_Instrument_AY-3-8910)
 - GI AY-3-8910 Datasheet [`PDF`](http://map.grauw.nl/resources/sound/generalinstrument_ay-3-8910.pdf)
 - The MSX Red Book [3. Programmable Sound Generator](https://github.com/gseidler/The-MSX-Red-Book/blob/master/the_msx_red_book.md#chapter_3)
+
+<br/>
+
+---
+
+![Creative Commons License](https://i.creativecommons.org/l/by-nc/4.0/88x31.png) 
+<br/>This document is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/).
