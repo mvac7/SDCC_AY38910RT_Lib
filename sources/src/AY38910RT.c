@@ -36,7 +36,7 @@
 
 
 
-boolean isAYextern;  // true/1 = Extern AY  Else Intern AY
+char AY_TYPE;      // 1 = External AY  Else Internal AY
 
 char AY_reg7;
 //char AYREGS[14];
@@ -64,7 +64,7 @@ __asm
   
   ld   C,#AY0index       ;default AY (intern)
   
-  ld   A,(#_isAYextern)
+  ld   A,(#_AY_TYPE)
   cp   #1
   jr   NZ,CheckReg7
   
@@ -130,7 +130,7 @@ __asm
   
   ld   C,#AY0index       ;default AY (intern)
   
-  ld   A,(#_isAYextern)
+  ld   A,(#_AY_TYPE)
   cp   #1
   jr   NZ,ReadAYreg
   ld   C,#AY1index       ;set extern AY
@@ -211,33 +211,32 @@ void SetVolume(char channel, char volume){
 
  Function : Mixer. Enable/disable Tone and Noise channels.
  Input    : [char] channel (0, 1 or 2)
-            [boolean] tone state
-            [boolean] noise state
+            [SWITCHER] tone state (ON=1;OFF=0)
+            [SWITCHER] noise state (ON=1;OFF=0)
  Output   : -
 ============================================================================= */
-void SetChannel(char channel, boolean isTone, boolean isNoise)
+void SetChannel(char channel, SWITCHER isTone, SWITCHER isNoise)
 {
-  char newValue=0;
+  char newValue;
   
-  if(isAYextern==true) newValue = AY_reg7;
+  if(AY_TYPE==AY_EXTERNAL) newValue = AY_reg7;
   else newValue = GetSound(7);
    
-  //el control de los dos bits de I/O del registro 7 
-  //se hace en la función Sound
+  //control of the two I/O bits of register 7 is done in the SOUND function
   if(channel==0) 
   {
-      if(isTone==true){newValue&=254;}else{newValue|=1;}
-      if(isNoise==true){newValue&=247;}else{newValue|=8;}
+      if(isTone==ON){newValue&=254;}else{newValue|=1;}
+      if(isNoise==ON){newValue&=247;}else{newValue|=8;}
   }
   if(channel==1)    
   {
-      if(isTone==true){newValue&=253;}else{newValue|=2;}
-      if(isNoise==true){newValue&=239;}else{newValue|=16;}
+      if(isTone==ON){newValue&=253;}else{newValue|=2;}
+      if(isNoise==ON){newValue&=239;}else{newValue|=16;}
   }
   if(channel==2)
   { 
-      if(isTone==true){newValue&=251;}else{newValue|=4;}
-      if(isNoise==true){newValue&=223;}else{newValue|=32;}
+      if(isTone==ON){newValue&=251;}else{newValue|=4;}
+      if(isNoise==ON){newValue&=223;}else{newValue|=32;}
   }
   SOUND(7,newValue);
 }

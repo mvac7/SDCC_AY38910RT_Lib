@@ -96,12 +96,12 @@ void main(void)
   LOCATE(1,10);
   result = INKEY();
   
-  if (result==89 || result==121) isAYextern=true;  //<<--- Extern AY ON
-  else isAYextern=false;                           //<<--- Extern AY OFF
+  if (result==89 || result==121) AY_TYPE=AY_EXTERNAL;
+  else AY_TYPE=AY_INTERNAL;
   
   unRLEWBtoVRAM((uint) GUI_MAP,BASE5+96); //show screen map
   
-  PRINTON(0x1A6D,isAYextern);
+  PRINTON(0x1A6D,AY_TYPE);
     
   test1(); // test SOUND
   test2(); // test SetTonePeriod

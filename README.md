@@ -11,22 +11,27 @@ Programming language: C and Z80 assembler
 ---
 ## Description
 
-This project is an opensource library functions for access to internal or external MSX PSG AY-3-8910 in Real Time. 
+Library for access to internal or external MSX PSG AY-3-8910 in Real Time. 
 
-Designed for developing MSX applications using Small Device C Compiler (SDCC).
-  
 It does not use the BIOS so it can be used to program both ROMs or MSX-DOS executables.
   
 Reading or writing to the PSG is done through calls to the assigned ports.
 
 It incorporates the SOUND function with the same behavior as the command included in MSX BASIC, as well as specific functions to modify the different sound parameters of the AY. 
 
+Controls the I/O bits of register 7 (Mixer), of the internal AY.
+
 It allows to use the internal PSG of the MSX or an external one (like the one incorporated in the MEGAFLASHROM SCC+, Flashjacks or other).
 
-In the header file there is a definition of boolean type, needed for the functions.
-This type uses the values "true" or "false" in lowercase, which equals 1 and 0 respectively.
+In the header file there is a definition of SWITCHER type, needed for the functions.
+This type uses the values "ON" or "OFF", which equals 1 and 0 respectively.
 
 Include definitions to improve the readability of your programs.
+
+Use them for developing MSX applications using Small Device C Compiler (SDCC).
+
+This project is an Open Source library. 
+You can add part or all of this code in your application development or include it in other libraries/engines.
 
 You can access the documentation here with [`How to use the library`](docs/HOWTO.md).
 
@@ -54,8 +59,8 @@ Enjoy it!
 ---
 ## Requirements
 
-- Small Device C Compiler (SDCC) v4.1 > http://sdcc.sourceforge.net/
-- Hex2bin v2.5 http://hex2bin.sourceforge.net/
+- [Small Device C Compiler (SDCC) v4.1](http://sdcc.sourceforge.net/)
+- [Hex2bin v2.5](http://hex2bin.sourceforge.net/)
 
 
 

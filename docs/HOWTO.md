@@ -3,17 +3,29 @@
 
 ---
 ## Index
+
 - [1 Description](#1-Description)
 - [2 Requirements](#2-Requirements)
 - [3 Definitions](#3-Definitions)
-   - [3.1 AY Registers](#31-AY-Registers)
-   - [3.2 Envelope shapes](#32-Envelope-shapes)
-   - [3.3 AY channels](#33-AY-channels)
+   - [3.1 SWITCHER Type](#31-SWITCHER-Type)
+   - [3.2 AY Type](#32-AY-Type)
+   - [3.3 AY Registers](#33-AY-Registers)
+   - [3.4 Envelope shapes](#34-Envelope-shapes)
+   - [3.5 AY channels](#35-AY-channels)
 - [4 Functions](#4-Functions)
+   - [4.1 SOUND](#41-SOUND)
+   - [4.2 GetSound](#42-GetSound)
+   - [4.3 SetTonePeriod](#43-SetTonePeriod)
+   - [4.4 SetNoisePeriod](#44-SetNoisePeriod)
+   - [4.5 SetEnvelopePeriod](#45-SetEnvelopePeriod)
+   - [4.6 SetVolume](#46-SetVolume)
+   - [4.7 SetChannel](#47-SetChannel)
+   - [4.8 PlayEnvelope](#48-PlayEnvelope)
 - [5 Set Internal or External AY](#5-Set-Internal-or-External-AY)
-- [6 Appendices](#6-Appendices)
-   - [6.1 AY-3-8910 Register Table](#61-AY-3-8910-Register-Table)  
-- [7 References](#7-References)
+- [6 How to use this](#6-How-to-use-this)
+- [7 Appendices](#7-Appendices)
+   - [7.1 AY-3-8910 Register Table](#71-AY-3-8910-Register-Table)  
+- [8 References](#8-References)
 
 
 <br/>
@@ -22,22 +34,27 @@
 
 ## 1 Description
 
-This project is an opensource library functions for access to internal or external MSX PSG AY-3-8910 in Real Time. 
+Library for access to internal or external MSX PSG AY-3-8910 in Real Time. 
 
-Designed for developing MSX applications using Small Device C Compiler (SDCC).
-  
 It does not use the BIOS so it can be used to program both ROMs or MSX-DOS executables.
   
 Reading or writing to the PSG is done through calls to the assigned ports.
 
 It incorporates the SOUND function with the same behavior as the command included in MSX BASIC, as well as specific functions to modify the different sound parameters of the AY. 
 
+Controls the I/O bits of register 7 (Mixer), of the internal AY.
+
 It allows to use the internal PSG of the MSX or an external one (like the one incorporated in the MEGAFLASHROM SCC+, Flashjacks or other).
 
-In the header file there is a definition of boolean type, needed for the functions.
-This type uses the values "true" or "false" in lowercase, which equals 1 and 0 respectively.
+In the header file there is a definition of SWITCHER type, needed for the functions.
+This type uses the values "ON" or "OFF", which equals 1 and 0 respectively.
 
 Include definitions to improve the readability of your programs.
+
+Use them for developing MSX applications using Small Device C Compiler (SDCC).
+
+This project is an Open Source library. 
+You can add part or all of this code in your application development or include it in other libraries/engines.
 
 This library is part of the [MSX fR3eL Project](https://github.com/mvac7/SDCC_MSX_fR3eL).
 
@@ -59,7 +76,26 @@ Enjoy it!
 
 ## 3 Definitions
 
-### 3.1 AY Registers
+
+### 3.1 SWITCHER Type 
+
+Data type definition to be used in switches (same as boolean type).
+
+Label | Value
+:---  | ---:  
+OFF   | 0
+ON    | 1
+
+
+### 3.2 AY Type 
+
+Label | Value
+:---  | ---:  
+AY_INTERNAL | 0
+AY_EXTERNAL | 1
+
+
+### 3.3 AY Registers
 
 Label | Value | Description
 :---  | ---:  | :--- 
@@ -74,9 +110,8 @@ AY_AmpC      | 10 | Channel Volume C (4 bits + B5 active Envelope)
 AY_EnvPeriod | 11 | Envelope Period (16 bits)
 AY_EnvShape  | 13 | Envelope Shape
 
-<br/>
 
-### 3.2 Envelope shapes
+### 3.4 Envelope shapes
 
 The header file defines envelope shapes in case you prefer to use it instead 
 of the numerical form:
@@ -98,9 +133,9 @@ write the envelop" event. Remember that, every time the register 13 is written, 
 
 The Upper shape may be produced with the values: 4, 5, 6, 7 and 15.
 
-<br/>
 
-### 3.3 AY channels
+
+### 3.5 AY channels
 
 You can use it in the functions: SetTonePeriod, SetVolume and SetChannel
 
@@ -157,7 +192,7 @@ value = GetSound(7);  //read mixer register</code></pre>
 </td></tr>
 </table>
 
-### 4.3 SetNoisePeriod
+### 4.4 SetNoisePeriod
 
 <table>
 <tr><th colspan=2 align="left">SetNoisePeriod</th></tr>
@@ -170,7 +205,7 @@ value = GetSound(7);  //read mixer register</code></pre>
 </td></tr>
 </table>
 
-### 4.3 SetEnvelopePeriod
+### 4.5 SetEnvelopePeriod
 
 <table>
 <tr><th colspan=2 align="left">SetEnvelopePeriod</th></tr>
@@ -183,7 +218,7 @@ value = GetSound(7);  //read mixer register</code></pre>
 </td></tr>
 </table>
 
-### 4.3 SetVolume
+### 4.6 SetVolume
 
 <table>
 <tr><th colspan=2 align="left">SetVolume</th></tr>
@@ -198,15 +233,15 @@ SetVolume(1,16);  // activate envelope for channel B</code></pre>
 </td></tr>
 </table>
 
-### 4.3 SetChannel
+### 4.7 SetChannel
 
 <table>
 <tr><th colspan=2 align="left">SetChannel</th></tr>
 <tr><td colspan=2>Mixer. Enable/disable Tone and Noise channels.</td></tr>
 <tr><th>Function</th><td>SetChannel(channel, isTone, isNoise)</td></tr>
 <tr><th>channel</th><td>[char] channel (0, 1 or 2)</td></tr>
-<tr><th>isTone</th><td>[boolean] Tone channel state</td></tr>
-<tr><th>isNoise</th><td  width=300>[boolean] Noise channel state</td></tr>
+<tr><th>isTone</th><td>[SWITCHER] Tone channel state</td></tr>
+<tr><th>isNoise</th><td  width=300>[SWITCHER] Noise channel state</td></tr>
 <tr><th>Output</th><td> --- </td></tr>
 <tr><th>Examples:</th><td>
 <pre><code>SetChannel(0,true,false);
@@ -215,7 +250,7 @@ SetChannel(2,false,false);</code></pre>
 </td></tr>
 </table>
 
-### 4.3 PlayEnvelope
+### 4.8 PlayEnvelope
 
 <table>
 <tr><th colspan=2 align="left">PlayEnvelope</th></tr>
@@ -233,6 +268,7 @@ PlayEnvelope(ENV_LowerTriangle); //Play LowerTriangle envelope shape</code></pre
 <br/> 
 
 ---
+
 ## 5 Set Internal or External AY
 
 To indicate in which PSG the sounds are to be played, you have the `isAYextern` variable. 
@@ -247,10 +283,19 @@ The library does not contain an initialization function so it is recommended to 
 <br/>
 
 ---
-## 6 Appendices
+
+## 6 How to use this
+
+coming soon...
 
 
-### 6.1 AY-3-8910 Register Table
+<br/> 
+
+---
+
+## 7 Appendices
+
+### 7.1 AY-3-8910 Register Table
 
 <table>
 <tr>
@@ -315,7 +360,7 @@ The library does not contain an initialization function so it is recommended to 
 <br/>
 
 ---
-## 7 References
+## 8 References
 
 - General Instrument AY-3-8910 [`wikipedia`](https://en.wikipedia.org/wiki/General_Instrument_AY-3-8910)
 - GI AY-3-8910 Datasheet [`PDF`](http://map.grauw.nl/resources/sound/generalinstrument_ay-3-8910.pdf)
