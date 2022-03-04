@@ -335,13 +335,13 @@ coming soon...
 <td align=center>B</td><td align="center">A</td>
 </tr>
 <tr>
-<td>R8</td><td>Channel A Amplitude</td><td colspan=2></td><td align="center">Env</td><td colspan=5 align="center">Amplitude</td>
+<td>R8</td><td>Channel A Amplitude</td><td colspan=3></td><td align="center">Env</td><td colspan=4 align="center">Amplitude</td>
 </tr>
 <tr>
-<td>R9</td><td>Channel B Amplitude</td><td colspan=2></td><td align="center">Env</td><td colspan=5 align="center">Amplitude</td>
+<td>R9</td><td>Channel B Amplitude</td><td colspan=3></td><td align="center">Env</td><td colspan=4 align="center">Amplitude</td>
 </tr>
 <tr>
-<td>R10</td><td>Channel C Amplitude</td><td colspan=2></td><td align="center">Env</td><td colspan=5 align="center">Amplitude</td>
+<td>R10</td><td>Channel C Amplitude</td><td colspan=3></td><td align="center">Env</td><td colspan=4 align="center">Amplitude</td>
 </tr>
 <tr>
 <td>R11</td><td rowspan=2>Envelope Period</td><td colspan=8 align="center">8-Bit Fine Tune Envelope</td>
