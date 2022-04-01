@@ -93,6 +93,7 @@ CheckReg7:
   in   A,(C)  
   and  #0b11000000	; Mask to catch the two PSG I/O bits  
   or   D		    ; and add the new value.
+  ld   D,A
   
   dec  C            ; go back to index port
   dec  C
