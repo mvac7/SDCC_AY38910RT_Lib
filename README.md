@@ -1,19 +1,24 @@
 # PSG AY-3-8910 RT MSX SDCC Library (fR3eL Project)
 
 <table>
+<tr><td rowspan=2>Name</td><td>PSG_AY38910RT</td></tr>
+<tr><td>PSG_AY38910RT_eXtended</td></tr>
 <tr><td>Architecture</td><td>MSX</td></tr>
-<tr><td>Format</td><td>C Object (SDCC .rel)</td></tr>
-<tr><td>Programming language</td><td>C and Z80 assembler</td></tr>
-<tr><td>Compiler</td><td>SDCC v4.1</td></tr>
+<tr><td>Environment</td><td>ROM, MSX-DOS, MSX BASIC</td></tr>
+<tr><td>Programming language</td><td>C</td></tr>
+<tr><td>Format</td><td>SDCC Relocatable object file (.rel)</td></tr>
+<tr><td>Compiler</td><td>SDCC v4.4</td></tr>
 </table>
 
 ---
 
 ## Description
 
-Library for access to internal or external MSX PSG AY-3-8910 in Real Time. 
+C function library with functions for access to internal or external MSX PSG AY-3-8910 in Real Time. 
 
-It does not use the BIOS so it can be used to program both ROMs or MSX-DOS executables.
+This project consists of two libraries that complement each other:
+- **PSG_AY38910BF** Includes only the functions necessary to play sounds.
+- **PSG_AY38910BF_eXtended** (optional) Adds specific functions to make it easier to write AY parameters. Requires the PSG_AY38910RT library.
   
 Reading or writing to the PSG is done through calls to the assigned ports.
 
@@ -38,7 +43,7 @@ These libraries are part of the [MSX fR3eL Project](https://github.com/mvac7/SDC
 
 Use them for developing MSX applications using Small Device C Compiler [`SDCC`](http://sdcc.sourceforge.net/).
 
-This project is an Open Source. 
+This project is open source under the [MIT license](LICENSE).<br/>
 You can add part or all of this code in your application development or include it in other libraries/engines.
 
 Enjoy it!                      
@@ -59,7 +64,6 @@ Enjoy it!
 ---
 ## Requirements
 
-- [Small Device C Compiler (SDCC) v4.1](http://sdcc.sourceforge.net/)
+- [Small Device C Compiler (SDCC) v4.4](http://sdcc.sourceforge.net/)
 - [Hex2bin v2.5](http://hex2bin.sourceforge.net/)
-
 

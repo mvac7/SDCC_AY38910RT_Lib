@@ -67,7 +67,7 @@ Enjoy it!
 
 ## 2 Requirements
 
-- [Small Device C Compiler (SDCC) v4.1](http://sdcc.sourceforge.net/)
+- [Small Device C Compiler (SDCC) v4.4](http://sdcc.sourceforge.net/)
 - [Hex2bin v2.5](http://hex2bin.sourceforge.net/)
 
 <br/>
@@ -272,13 +272,13 @@ PlayEnvelope(ENV_LowerTriangle); //Play LowerTriangle envelope shape</code></pre
 ## 5 Set Internal or External AY
 
 To indicate in which PSG the sounds are to be played, you have the `AY_TYPE` variable. 
-To select an external AY (ports 10h to 12h), like the one included in the MegaFlashROM SCC+, Flashjacks or other, you have to set the variable to 1 (or `AY_EXTERNAL`).
+To select an external AY (ports 10h to 12h), like the one included in the MegaFlashROM SCC+, Flashjacks or other, you have to set the variable to 1 (or `AY_EXTERNAL` definition).
 
 ```
   AY_TYPE = AY_EXTERNAL;
 ```
 
-If you want to use the internal AY, assign the value 0 (or `AY_INTERNAL`).
+If you want to use the internal AY, assign the value 0 (or `AY_INTERNAL` definition).
 
 | ATTENTION! |
 | ---------- | 
