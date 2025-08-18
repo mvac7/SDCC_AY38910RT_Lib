@@ -7,33 +7,39 @@ PSG AY-3-8910 RealTime MSX SDCC Library (fR3eL Project)
 
 
 
-
-
-//envelope shapes
-#define AY_ENV_LowerBeat      1  //(0,1,2,3 and 9)<-- 0 can be useful in case you need to control when the envelope is triggered
-#define AY_ENV_Upper          4  //(4,5,6,7 and 15)
-#define AY_ENV_LeftSaw        8
-#define AY_ENV_LowerTriangle 10 
-#define AY_ENV_LowerHold     11 
-#define AY_ENV_RightSaw      12
-#define AY_ENV_UpperHold     13
-#define AY_ENV_UpperTriangle 14 
- 
-
-
 #ifndef AY_REGISTERS
 #define AY_REGISTERS
-#define AY_ToneA      0 //Channel A Tone Period (12 bits)
-#define AY_ToneB      2 //Channel B Tone Period (12 bits)
-#define AY_ToneC      4 //Channel C Tone Period (12 bits)
-#define AY_Noise      6 //Noise Period (5 bits)
-#define AY_Mixer      7 //Mixer
-#define AY_AmpA       8 //Channel Volume A (4 bits + B5 active Envelope)
-#define AY_AmpB       9 //Channel Volume B (4 bits + B5 active Envelope)
-#define AY_AmpC      10 //Channel Volume C (4 bits + B5 active Envelope)
-#define AY_EnvPeriod 11 //Envelope Period (16 bits)
-#define AY_EnvShape  13 //Envelope Shape
+#define AY_ToneA			0 //Channel A Tone Period (12 bits)
+#define AY_ToneA_fine		0 //Channel A Fine Tune   (8 bits)
+#define AY_ToneA_coarse		1 //Channel A Coarse Tune (4 bits)
+#define AY_ToneB			2 //Channel B Tone Period (12 bits)
+#define AY_ToneB_fine		2 //Channel B Fine Tune   (8 bits)
+#define AY_ToneB_coarse		3 //Channel B Coarse Tune (4 bits)
+#define AY_ToneC			4 //Channel C Tone Period (12 bits)
+#define AY_ToneC_fine		4 //Channel C Fine Tune   (8 bits)
+#define AY_ToneC_coarse		5 //Channel C Coarse Tune (4 bits)
+#define AY_Noise			6 //Noise Period (5 bits)
+#define AY_Mixer			7 //Mixer
+#define AY_AmpA				8 //Channel Volume A (4 bits + B5 active Envelope)
+#define AY_AmpB				9 //Channel Volume B (4 bits + B5 active Envelope)
+#define AY_AmpC				10 //Channel Volume C (4 bits + B5 active Envelope)
+#define AY_EnvPeriod		11 //Envelope Period (16 bits)
+#define AY_EnvPeriod_fine	11 //Envelope Fine Tune   (8 bits)
+#define AY_EnvPeriod_coarse	12 //Envelope Coarse Tune (8 bits)
+#define AY_EnvShape			13 //Envelope Shape
 #endif
+
+
+
+//AY envelope shapes
+#define AY_ENV_LowerBeat      1	// (0,1,2,3 and 9)<-- 0 can be useful in case you need to control when the envelope is triggered
+#define AY_ENV_Upper          4	// (4,5,6,7 and 15)
+#define AY_ENV_LeftSaw        8	//
+#define AY_ENV_LowerTriangle 10	//
+#define AY_ENV_LowerHold     11	//
+#define AY_ENV_RightSaw      12	//
+#define AY_ENV_UpperHold     13	//
+#define AY_ENV_UpperTriangle 14	//
 
 
 
@@ -49,7 +55,9 @@ PSG AY-3-8910 RealTime MSX SDCC Library (fR3eL Project)
 #define AY_EXTERNAL 0x10	//(MEGAFLASHROM SCC+, Flashjacks, Yamanooto, Carnivore2 or others)
 
 
-extern char AY_TYPE;      // 1 = External AY  Else Internal AY
+
+
+extern char AY_IOport;	//new (v1.7) AY first port
 
 
 
